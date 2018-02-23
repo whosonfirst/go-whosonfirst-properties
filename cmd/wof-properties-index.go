@@ -14,6 +14,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 )
 
@@ -31,8 +32,11 @@ func (c Closer) Close() error {
 
 func main() {
 
-	var props = flag.String("properties", "", "...")
-	var mode = flag.String("mode", "repo", "")
+	valid_modes := strings.Join(index.Modes(), ",")
+	desc_modes := fmt.Sprintf("The mode to use importing data. Valid modes are: %s.", valid_modes)
+
+	props := flag.String("properties", "", "The path to your whosonfirst-properties/properties directory")
+	mode := flag.String("mode", "repo", desc_modes)
 
 	flag.Parse()
 
