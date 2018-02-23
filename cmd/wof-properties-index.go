@@ -118,6 +118,9 @@ func main() {
 					err = p.EnsureId()
 
 					if err != nil {
+
+						mu.Unlock()
+
 						msg := fmt.Sprintf("failed to ensure ID for %s, because %s", abs_path, err)
 						return errors.New(msg)
 					}
