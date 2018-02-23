@@ -51,6 +51,9 @@ func (p *Property) EnsureId() error {
 	return nil
 }
 
+// PLEASE GIVE ME A BETTER NAME...
+// (20180222/thisisaaronland)
+
 func (p *Property) Write(dest string) error {
 
 	abs_path := filepath.Join(dest, p.RelPath())
@@ -90,6 +93,10 @@ func (p *Property) Write(dest string) error {
 }
 
 func NewPropertyFromKey(k string) (*Property, error) {
+
+     	// PLEASE ACCOUNT FOR THINGS LIKE "src:lbl:centroid"
+	// THAT OR PURGE THOSE KEYS FROM THE DATA...
+	// (20180222/thisisaaronland)
 
 	parts := strings.Split(k, ":")
 
