@@ -35,5 +35,5 @@ fmt:
 	go fmt cmd/*.go
 		
 bin:	self
-	@GOPATH=$(GOPATH) go build -o bin/wof-properties-crawl cmd/wof-properties-crawl.go
+	@GOPATH=$(GOPATH) go build -o bin/wof-properties-report cmd/wof-properties-report.go
 	@GOPATH=$(GOPATH) go build -o bin/wof-properties-index cmd/wof-properties-index.go
