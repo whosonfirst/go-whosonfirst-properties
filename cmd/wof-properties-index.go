@@ -37,6 +37,7 @@ func main() {
 
 	props := flag.String("properties", "", "The path to your whosonfirst-properties/properties directory")
 	mode := flag.String("mode", "repo", desc_modes)
+	debug := flag.Bool("debug", false, "Go through all the motions but don't write any new files")
 
 	flag.Parse()
 
@@ -103,10 +104,12 @@ func main() {
 					continue
 				}
 
-				// SKIP name: FOR NOW - NOT A FEATURE
-				// (20180222/thisisaaronland)
+				if p.IsName() {
 
-				if p.Prefix == "name" {
+					if *debug {
+						log.Printf("%s is a name property, skipping\n", p)
+					}
+
 					continue
 				}
 
@@ -119,21 +122,25 @@ func main() {
 
 				if os.IsNotExist(err) {
 
-					err = p.EnsureId()
+					if *debug {
+						log.Printf("create %s but debugging is enabled, so don't\n", abs_path)
+					} else {
+						err = p.EnsureId()
 
-					if err != nil {
+						if err != nil {
 
-						mu.Unlock()
+							mu.Unlock()
 
-						msg := fmt.Sprintf("failed to ensure ID for %s, because %s", abs_path, err)
-						return errors.New(msg)
-					}
+							msg := fmt.Sprintf("failed to ensure ID for %s, because %s", abs_path, err)
+							return errors.New(msg)
+						}
 
-					err = p.Write(*props)
+						err = p.Write(*props)
 
-					if err != nil {
-						msg := fmt.Sprintf("failed to write (%s) for %s, because", abs_path, f.Id(), err)
-						log.Println(msg)
+						if err != nil {
+							msg := fmt.Sprintf("failed to write (%s) for %s, because", abs_path, f.Id(), err)
+							log.Println(msg)
+						}
 					}
 				}
 

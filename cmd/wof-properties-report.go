@@ -1,8 +1,8 @@
 package main
 
 import (
-	"flag"
 	"encoding/csv"
+	"flag"
 	"github.com/whosonfirst/go-whosonfirst-crawl"
 	"github.com/whosonfirst/go-whosonfirst-properties"
 	"io"
@@ -45,7 +45,7 @@ func main() {
 	mu := new(sync.Mutex)
 
 	row := []string{
-	    	"id",
+		"id",
 		"prefix",
 		"name",
 		"description",

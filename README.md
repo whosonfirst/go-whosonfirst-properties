@@ -19,12 +19,20 @@ All of this package's dependencies are bundled with the code in the `vendor` dir
 Crawl a series of Who's On First documents and ensure that all their properties have a corresponding property file in your `whosonfirst-properties/properties` directory.
 
 ```
-./bin/wof-properties-index -h
+> ./bin/wof-properties-index -h
 Usage of ./bin/wof-properties-index:
+  -debug
+	Go through all the motions but don't write any new files
   -mode string
     	The mode to use importing data. Valid modes are: directory,feature,feature-collection,files,geojson-ls,meta,path,repo,sqlite. (default "repo")
   -properties string
     	      The path to your whosonfirst-properties/properties directory
+```
+
+For example:
+
+```
+./bin/wof-properties-index -mode sqlite -properties ../whosonfirst-properties/properties /usr/local/data/whosonfirst-data-constituency-us-latest.db
 ```
 
 ### wof-properties-report

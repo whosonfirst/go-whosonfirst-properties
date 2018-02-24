@@ -11,8 +11,15 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
+
+var re_name *regexp.Regexp
+
+func init() {
+	re_name = regexp.MustCompile(`.*_x_.*`)
+}
 
 type Property struct {
 	Id          int64  `json:"id"`
@@ -32,6 +39,10 @@ func (p *Property) Filename() string {
 
 func (p *Property) RelPath() string {
 	return filepath.Join(p.Prefix, p.Filename())
+}
+
+func (p *Property) IsName() bool {
+	return re_name.MatchString(p.Name)
 }
 
 func (p *Property) EnsureId() error {
@@ -94,7 +105,7 @@ func (p *Property) Write(dest string) error {
 
 func NewPropertyFromKey(k string) (*Property, error) {
 
-     	// PLEASE ACCOUNT FOR THINGS LIKE "src:lbl:centroid"
+	// PLEASE ACCOUNT FOR THINGS LIKE "src:lbl:centroid"
 	// THAT OR PURGE THOSE KEYS FROM THE DATA...
 	// (20180222/thisisaaronland)
 
