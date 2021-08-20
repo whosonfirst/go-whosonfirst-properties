@@ -2,25 +2,15 @@
 
 Go package for working with Who's On First properties
 
-## Install
-
-You will need to have both `Go` (specifically a version of Go more recent than 1.7 so let's just assume you need [Go 1.9](https://golang.org/dl/) or higher) and the `make` programs installed on your computer. Assuming you do just type:
-
-```
-make bin
-```
-
-All of this package's dependencies are bundled with the code in the `vendor` directory.
-
 ## Tools
 
-### wof-properties-index
+### index
 
 Crawl a series of Who's On First documents and ensure that all their properties have a corresponding property file in your `whosonfirst-properties/properties` directory.
 
 ```
-> ./bin/wof-properties-index -h
-Usage of ./bin/wof-properties-index:
+> ./bin/index -h
+Usage of ./bin/index:
   -debug
 	Go through all the motions but don't write any new files
   -mode string
@@ -32,16 +22,16 @@ Usage of ./bin/wof-properties-index:
 For example:
 
 ```
-./bin/wof-properties-index -mode sqlite -properties ../whosonfirst-properties/properties /usr/local/data/whosonfirst-data-constituency-us-latest.db
+./bin/index -mode sqlite -properties ../whosonfirst-properties/properties /usr/local/data/whosonfirst-data-constituency-us-latest.db
 ```
 
-### wof-properties-report
+### report
 
 Generate a CSV report for a list of `whosonfirst-properties` properties.
 
 ```
-> ./bin/wof-properties-report -h
-Usage of ./bin/wof-properties-report:
+> ./bin/report -h
+Usage of ./bin/report:
   -properties string
     	      The path to your whosonfirst-properties/properties directory
   -report string
@@ -51,7 +41,7 @@ Usage of ./bin/wof-properties-report:
 For example:
 
 ```
-> ./bin/wof-properties-report -properties ../whosonfirst-properties/properties
+> ./bin/report -properties ../whosonfirst-properties/properties
 id,prefix,name,description
 1158804491,edtf,cessation,"Indicates when a place stopped being a going concern. The semantics for something ceasing may vary from placetype to placetype. For example, a venue may cease operations or a country may split in to multiple countries."
 1158844675,abrv,{lang}_x_colloquial,"The colloquial, informal abbreviation for a place."

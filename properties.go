@@ -52,7 +52,7 @@ func (p *Property) EnsureId() error {
 	}
 
 	client := api.NewAPIClient()
-	i, err := client.CreateInteger()
+	i, err := client.NextInt()
 
 	if err != nil {
 		return err
