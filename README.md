@@ -2,6 +2,10 @@
 
 Go package for working with Who's On First properties
 
+## Documentation
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/whosonfirst/go-whosonfirst-properties.svg)](https://pkg.go.dev/github.com/whosonfirst/go-whosonfirst-properties)
+
 ## Tools
 
 ### index
