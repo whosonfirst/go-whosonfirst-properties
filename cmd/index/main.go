@@ -1,14 +1,17 @@
+// index is a command line tool for crawling one or more Who's On First data sources and ensuring that
+// individual properties contained in those records have a corresponding machine-readable properties
+// description file.
 package main
 
 import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/sfomuseum/go-flags/multi"
 	"github.com/tidwall/gjson"
+	"github.com/whosonfirst/go-whosonfirst-crawl"
 	"github.com/whosonfirst/go-whosonfirst-iterate/v2/iterator"
 	"github.com/whosonfirst/go-whosonfirst-properties"
-	"github.com/whosonfirst/go-whosonfirst-crawl"
-	"github.com/sfomuseum/go-flags/multi"
 	"io"
 	"log"
 	"os"
@@ -20,11 +23,14 @@ func main() {
 
 	props := flag.String("properties", "", "The path to your whosonfirst-properties/properties directory")
 	iterator_uri := flag.String("iterator-uri", "repo://", "A valid go-whosonfirst-iterate/v2 URI.")
-	debug := flag.Bool("debug", false, "Go through all the motions but don't write any new files")
+	debug := flag.Bool("debug", false, "Go through all the motions but don't write any new files.")
 
 	var alternate multi.MultiString
-	flag.Var(&alternate, "alternate", "One or more paths to alternate properties directories")
-	
+	flag.Var(&alternate, "alternate", "One or more paths to alternate properties directories that will be crawled to check for existing properties (that will not be duplicated).")
+
+	var exclude multi.MultiRegexp
+	flag.Var(&exclude, "exclude", "One or more valid regular expressions to use for excluding property names you don't want to index")
+
 	flag.Parse()
 
 	ctx := context.Background()
@@ -39,11 +45,11 @@ func main() {
 			if info.IsDir() {
 				return nil
 			}
-			
+
 			if filepath.Ext(path) != ".json" {
 				return nil
 			}
-			
+
 			prop, err := properties.NewPropertyFromFile(path)
 
 			if err != nil {
@@ -62,10 +68,10 @@ func main() {
 			if err != nil {
 				log.Fatalf("Failed to crawl alternate properties source '%s', %v", path, err)
 			}
-			
+
 		}
 	}
-	
+
 	cb := func(ctx context.Context, path string, fh io.ReadSeeker, args ...interface{}) error {
 
 		select {
@@ -112,6 +118,23 @@ func main() {
 				}
 
 				continue
+			}
+
+			if len(exclude) > 0 {
+
+				include := true
+
+				for _, re := range exclude {
+
+					if re.MatchString(p.String()) {
+						include = false
+						break
+					}
+				}
+
+				if !include {
+					continue
+				}
 			}
 
 			rel_path := p.RelPath()

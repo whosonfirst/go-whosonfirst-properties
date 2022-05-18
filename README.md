@@ -13,20 +13,37 @@ Go package for working with Who's On First properties
 Crawl a series of Who's On First documents and ensure that all their properties have a corresponding property file in your `whosonfirst-properties/properties` directory.
 
 ```
-> ./bin/index -h
+$> ./bin/index -h
 Usage of ./bin/index:
+  -alternate value
+    	One or more paths to alternate properties directories that will be crawled to check for existing properties (that will not be duplicated).
   -debug
-	Go through all the motions but don't write any new files
-  -mode string
-    	The mode to use importing data. Valid modes are: directory,feature,feature-collection,files,geojson-ls,meta,path,repo,sqlite. (default "repo")
+    	Go through all the motions but don't write any new files.
+  -exclude value
+    	One or more valid regular expressions to use for excluding property names you don't want to index
+  -iterator-uri string
+    	A valid go-whosonfirst-iterate/v2 URI. (default "repo://")
   -properties string
-    	      The path to your whosonfirst-properties/properties directory
+    	The path to your whosonfirst-properties/properties directory
 ```
 
 For example:
 
 ```
-./bin/index -mode sqlite -properties ../whosonfirst-properties/properties /usr/local/data/whosonfirst-data-constituency-us-latest.db
+$> ./bin/index \
+	-mode sqlite \
+	-properties ../whosonfirst-properties/properties \
+	/usr/local/data/whosonfirst-data-constituency-us-latest.db
+```
+
+Or:
+
+```
+$> ./bin/index \
+	-exclude 'misc\:.*' \
+	-alternate /usr/local/whosonfirst/whosonfirst-properties/properties \
+	-properties /usr/local/sfomuseum/sfomuseum-properties \
+	/usr/local/data/sfomuseum-data-*
 ```
 
 ### report
