@@ -1,14 +1,13 @@
 package properties
 
 import (
+	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
-	"github.com/aaronland/go-brooklynintegers-api"
 	"github.com/facebookgo/atomicfile"
 	"github.com/tidwall/pretty"
+	"github.com/whosonfirst/go-whosonfirst-id"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -51,11 +50,17 @@ func (p *Property) EnsureId() error {
 		return nil
 	}
 
-	client := api.NewAPIClient()
-	i, err := client.NextInt()
+	ctx := context.Background()
+	id_provider, err := id.NewProvider(ctx)
 
 	if err != nil {
-		return err
+		return fmt.Errorf("Failed to create new ID provider, %w", err)
+	}
+
+	i, err := id_provider.NewID()
+
+	if err != nil {
+		return fmt.Errorf("Failed to create new ID, %w", err)
 	}
 
 	p.Id = i
@@ -112,7 +117,7 @@ func NewPropertyFromKey(k string) (*Property, error) {
 	parts := strings.Split(k, ":")
 
 	if len(parts) != 2 {
-		return nil, errors.New("Invalid key")
+		return nil, fmt.Errorf("Invalid key")
 	}
 
 	p := Property{
@@ -147,7 +152,7 @@ func NewPropertyFromFile(path string) (*Property, error) {
 
 func NewPropertyFromReader(fh io.Reader) (*Property, error) {
 
-	body, err := ioutil.ReadAll(fh)
+	body, err := io.ReadAll(fh)
 
 	if err != nil {
 		return nil, err
