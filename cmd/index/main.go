@@ -7,6 +7,8 @@ import (
 	"github.com/tidwall/gjson"
 	"github.com/whosonfirst/go-whosonfirst-iterate/v2/iterator"
 	"github.com/whosonfirst/go-whosonfirst-properties"
+	"github.com/whosonfirst/go-whosonfirst-crawl"
+	"github.com/sfomuseum/go-flags/multi"
 	"io"
 	"log"
 	"os"
@@ -20,13 +22,50 @@ func main() {
 	iterator_uri := flag.String("iterator-uri", "repo://", "A valid go-whosonfirst-iterate/v2 URI.")
 	debug := flag.Bool("debug", false, "Go through all the motions but don't write any new files")
 
+	var alternate multi.MultiString
+	flag.Var(&alternate, "alternate", "One or more paths to alternate properties directories")
+	
 	flag.Parse()
 
 	ctx := context.Background()
 
 	mu := new(sync.RWMutex)
-	seen := make(map[string]bool)
+	seen := new(sync.Map)
 
+	if len(alternate) > 0 {
+
+		alternate_cb := func(path string, info os.FileInfo) error {
+
+			if info.IsDir() {
+				return nil
+			}
+			
+			if filepath.Ext(path) != ".json" {
+				return nil
+			}
+			
+			prop, err := properties.NewPropertyFromFile(path)
+
+			if err != nil {
+				return err
+			}
+
+			seen.Store(prop.String(), true)
+			return nil
+		}
+
+		for _, path := range alternate {
+
+			cr := crawl.NewCrawler(path)
+			err := cr.Crawl(alternate_cb)
+
+			if err != nil {
+				log.Fatalf("Failed to crawl alternate properties source '%s', %v", path, err)
+			}
+			
+		}
+	}
+	
 	cb := func(ctx context.Context, path string, fh io.ReadSeeker, args ...interface{}) error {
 
 		select {
@@ -53,11 +92,9 @@ func main() {
 
 		for k, _ := range pr.Map() {
 
-			mu.RLock()
-			_, ok := seen[k]
-			mu.RUnlock()
+			_, exists := seen.Load(k)
 
-			if ok {
+			if exists {
 				continue
 			}
 
@@ -106,7 +143,7 @@ func main() {
 				}
 			}
 
-			seen[k] = true
+			seen.Store(k, true)
 			mu.Unlock()
 		}
 

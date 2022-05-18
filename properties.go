@@ -21,6 +21,8 @@ func init() {
 	re_name = regexp.MustCompile(`.*_x_.*`)
 }
 
+type PropertyType interface{}
+
 // type Property is a struct that maps to a machine-readable data file describing a Who's On First property.
 type Property struct {
 	// The unique ID of this property
@@ -32,7 +34,7 @@ type Property struct {
 	// A description of the property targeted at humans (rather than machines)
 	Description string `json:"description"`
 	// The expected (JSON schema) type of this property
-	Type string `json:"type"`
+	Type PropertyType `json:"type"`
 }
 
 // String returns the fully-qualified name (prefix + ":" + name) of this property

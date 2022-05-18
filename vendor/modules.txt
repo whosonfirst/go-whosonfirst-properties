@@ -23,6 +23,9 @@ github.com/cenkalti/backoff/v4
 # github.com/facebookgo/atomicfile v0.0.0-20151019160806-2de1f203e7d5
 ## explicit
 github.com/facebookgo/atomicfile
+# github.com/sfomuseum/go-flags v0.8.2
+## explicit
+github.com/sfomuseum/go-flags/multi
 # github.com/tidwall/gjson v1.14.1
 ## explicit
 github.com/tidwall/gjson
@@ -46,12 +49,6 @@ github.com/whosonfirst/go-whosonfirst-iterate/v2/filters
 github.com/whosonfirst/go-whosonfirst-iterate/v2/iterator
 # github.com/whosonfirst/go-whosonfirst-log v0.1.0
 github.com/whosonfirst/go-whosonfirst-log
-# github.com/whosonfirst/go-whosonfirst-sources v0.1.0
-github.com/whosonfirst/go-whosonfirst-sources
-github.com/whosonfirst/go-whosonfirst-sources/sources
-# github.com/whosonfirst/go-whosonfirst-uri v1.2.0
-## explicit
-github.com/whosonfirst/go-whosonfirst-uri
 # github.com/whosonfirst/walk v0.0.1
 github.com/whosonfirst/walk
 # go.uber.org/ratelimit v0.2.0
