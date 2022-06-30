@@ -8,13 +8,13 @@ Go package for working with Who's On First properties
 
 ## Tools
 
-### index
+### index-properties
 
 Crawl a series of Who's On First documents and ensure that all their properties have a corresponding property file in your `whosonfirst-properties/properties` directory.
 
 ```
-$> ./bin/index -h
-Usage of ./bin/index:
+$> ./bin/index-properties -h
+Usage of ./bin/index-properties:
   -alternate value
     	One or more paths to alternate properties directories that will be crawled to check for existing properties (that will not be duplicated).
   -debug
@@ -30,7 +30,7 @@ Usage of ./bin/index:
 For example:
 
 ```
-$> ./bin/index \
+$> ./bin/index-properties \
 	-mode sqlite \
 	-properties ../whosonfirst-properties/properties \
 	/usr/local/data/whosonfirst-data-constituency-us-latest.db
@@ -39,7 +39,7 @@ $> ./bin/index \
 Or:
 
 ```
-$> ./bin/index \
+$> ./bin/index-properties \
 	-exclude 'misc\:.*' \
 	-alternate /usr/local/whosonfirst/whosonfirst-properties/properties \
 	-properties /usr/local/sfomuseum/sfomuseum-properties \
