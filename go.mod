@@ -9,5 +9,6 @@ require (
 	github.com/tidwall/pretty v1.2.0
 	github.com/whosonfirst/go-whosonfirst-crawl v0.2.1
 	github.com/whosonfirst/go-whosonfirst-id v0.0.4
+	github.com/whosonfirst/go-whosonfirst-iterate-organization v1.1.0
 	github.com/whosonfirst/go-whosonfirst-iterate/v2 v2.0.2
 )
