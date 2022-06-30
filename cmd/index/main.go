@@ -40,12 +40,12 @@ func main() {
 
 	if len(alternates) > 0 {
 
-		crawl_alternates_opts := &index.CrawlAlternatesOptions{
+		crawl_alternates_opts := &index.CatalogPropertiesOptions{
 			Lookup: lookup,
 			Logger: logger,
 		}
 
-		err := index.CrawlAlternates(ctx, crawl_alternates_opts, alternates...)
+		err := index.CatalogProperties(ctx, crawl_alternates_opts, alternates...)
 
 		if err != nil {
 			log.Fatalf("Failed to crawl alternate sources, %v", err)

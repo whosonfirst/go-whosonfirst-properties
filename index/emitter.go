@@ -14,15 +14,25 @@ import (
 	"sync"
 )
 
+// EmitterCallbackFuncOptions is a struct containing configuration options for the `EmitterCallbackFunc` method.
 type EmitterCallbackFuncOptions struct {
-	Debug   bool
-	Lookup  *sync.Map
-	Root    string
-	Mutex   *sync.RWMutex
+	// Debug is a boolean flag to signal that records should not be created or updated.
+	Debug bool
+	// Lookup is a `sync.Map` instance whose keys are the names of properties that have already been seen or processed.
+	Lookup *sync.Map
+	// Root is the root directory (path) where new and updated properties should be written.
+	Root string
+	// Mutex us a `sync.RWMutex` instance used prevent duplicate processing of the same properties.
+	Mutex *sync.RWMutex
+	// Exclude is an optional list of `sfomuseum/go-flags/multi.MultiRegexp` instances used to filter (exclude) certain properties.
 	Exclude multi.MultiRegexp
-	Logger  *log.Logger
+	// Logger is a `log.Logger` instance used to log state and feedback.
+	Logger *log.Logger
 }
 
+// EmitterCallbackFunc() returns a custom `whosonfirst/go-whosonfirst-iterate/v2/emitter.EmitterCallbackFunc` callback function
+// to be invoked when iterating through Who's On First data sources that will ensure there is a corresponding "properties" JSON
+// file for each of the properties in every document that is encountered.
 func EmitterCallbackFunc(opts *EmitterCallbackFuncOptions) emitter.EmitterCallbackFunc {
 
 	cb := func(ctx context.Context, path string, r io.ReadSeeker, args ...interface{}) error {
@@ -33,8 +43,6 @@ func EmitterCallbackFunc(opts *EmitterCallbackFuncOptions) emitter.EmitterCallba
 		default:
 			// pass
 		}
-
-		opts.Logger.Println(path)
 
 		body, err := io.ReadAll(r)
 
@@ -100,7 +108,6 @@ func EmitterCallbackFunc(opts *EmitterCallbackFuncOptions) emitter.EmitterCallba
 			abs_path := filepath.Join(opts.Root, rel_path)
 
 			opts.Mutex.Lock()
-			defer opts.Mutex.Unlock()
 
 			_, err = os.Stat(abs_path)
 
@@ -109,6 +116,7 @@ func EmitterCallbackFunc(opts *EmitterCallbackFuncOptions) emitter.EmitterCallba
 				if opts.Debug {
 					opts.Logger.Printf("create %s but debugging is enabled, so don't\n", abs_path)
 				} else {
+
 					err = p.EnsureId()
 
 					if err != nil {
@@ -127,10 +135,10 @@ func EmitterCallbackFunc(opts *EmitterCallbackFuncOptions) emitter.EmitterCallba
 			// END OF should be updated to use gocloud.dev/blob
 
 			opts.Lookup.Store(k, true)
+			opts.Mutex.Unlock()
 		}
 
 		return nil
-
 	}
 
 	return cb
