@@ -36,9 +36,16 @@ func main() {
 	mu := new(sync.RWMutex)
 	lookup := new(sync.Map)
 
+	logger := log.Default()
+
 	if len(alternates) > 0 {
 
-		err := index.CrawlAlternates(ctx, lookup, alternates...)
+		crawl_alternates_opts := &index.CrawlAlternatesOptions{
+			Lookup: lookup,
+			Logger: logger,
+		}
+
+		err := index.CrawlAlternates(ctx, crawl_alternates_opts, alternates...)
 
 		if err != nil {
 			log.Fatalf("Failed to crawl alternate sources, %v", err)
@@ -51,6 +58,7 @@ func main() {
 		Mutex:   mu,
 		Root:    *props,
 		Exclude: exclude,
+		Logger:  logger,
 	}
 
 	iter_cb := index.EmitterCallbackFunc(iter_cb_opts)
