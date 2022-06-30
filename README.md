@@ -46,6 +46,16 @@ $> ./bin/index-properties \
 	/usr/local/data/sfomuseum-data-*
 ```
 
+Or iterating over all the repositories matching a pattern (`sfomuseum-data-flights-`) in a given organization (`sfomuseum-data`):
+
+```
+$> ./bin/index \
+	-iterator-uri org:///tmp \
+	-properties /usr/local/sfomuseum/sfomuseum-properties/properties \
+	-alternate /usr/local/whosonfirst/whosonfirst-properties/properties \
+	'sfomuseum-data://?prefix=sfomuseum-data-flights-&exclude=sfomuseum-data-flights-YYYY-MM'
+```
+
 ### report
 
 Generate a CSV report for a list of `whosonfirst-properties` properties.
