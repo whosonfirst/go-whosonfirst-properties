@@ -56,12 +56,12 @@ $> ./bin/index \
 	'sfomuseum-data://?prefix=sfomuseum-data-flights-&exclude=sfomuseum-data-flights-YYYY-MM'
 ```
 
-### report
+### report-properties
 
 Generate a CSV report for a list of `whosonfirst-properties` properties.
 
 ```
-> ./bin/report -h
+> ./bin/report-properties -h
 Usage of ./bin/report:
   -properties string
     	      The path to your whosonfirst-properties/properties directory
@@ -72,7 +72,7 @@ Usage of ./bin/report:
 For example:
 
 ```
-> ./bin/report -properties ../whosonfirst-properties/properties
+$> ./bin/report-properties -properties ../whosonfirst-properties/properties
 id,prefix,name,description
 1158804491,edtf,cessation,"Indicates when a place stopped being a going concern. The semantics for something ceasing may vary from placetype to placetype. For example, a venue may cease operations or a country may split in to multiple countries."
 1158844675,abrv,{lang}_x_colloquial,"The colloquial, informal abbreviation for a place."
@@ -84,6 +84,45 @@ id,prefix,name,description
 1158804497,geom,area_square_m,"The geometric area of a feature in square meters, in the EPSG:3410 projection."
 ... and so on
 ```
+
+## Docker
+
+Yes, but not completely.
+
+There is a [Dockerfile](Dockerfile) for building a container designed to clone a specific properties (defintions) repo, records properties for all the files from multiple repositories in a given organization and commit those changes.
+
+For example:
+
+```
+$> docker build -t whosonfirst-properties-indexing .
+```
+
+And then:
+
+```
+$> docker run whosonfirst-properties-indexing /bin/index.sh \
+	-t 'constant://val={GITHUB_TOKEN}' \
+	-s 'whosonfirst-data://?prefix=whosonfirst-data-admin-xy'
+```
+
+The `index.sh` script bundled with the container is copied from the [docker-bin/index.sh](docker-bin/index.sh) script. It accepts the following arguments:
+
+```
+$> ./docker-bin/index.sh -h
+usage: ./index.sh -options
+options:
+-h Print this message.
+-o The GitHub organization for the properties repo. (Default is whosonfirst.)
+-r The name of the properties repo. (Default is whosonfirst-properties.)
+-s A whosonfirst/go-whosonfirst-iterate-organization URI source to defines repositories to index. (Default is whosonfirst-data:\/\/?prefix=whosonfirst-data-&exclude=whosonfirst-data-venue-.)
+-t A gocloud.dev/runtimevar URI referencing the GitHub API access token to use for updating {PROPERTIES_REPO}. (Default is constant://?val=s33kret.)
+```
+
+### Notes
+
+* Alternate property definition sources are not supported by the `index.sh` script yet.
+
+* GitHub API access tokens (specified in the `-t` flag) are derived using the [sfomuseum/runtimevar](https://github.com/sfomuseum/runtimevar#runtimevar-1) tool. Please consult the documentation for the list of supported URI schemes.
 
 ## See also
 
