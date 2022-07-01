@@ -4,7 +4,7 @@
 
 PROPERTIES_ORG=whosonfirst
 PROPERTIES_REPO=whosonfirst-properties
-PROPERTIES_LOCAL=/usr/local/data/whosonfirst-properties
+
 
 PROPERTIES_ALTERNATES=""
 PROPERTIES_EXCLUSIONS=""
@@ -32,13 +32,13 @@ while getopts "a:c:e:o:r:s:t:u:h" opt; do
 	    USAGE=1
 	    ;;
 	a)
-	    PROPERTIES_ALTERNATES+=("$OPTARG")
+	    PROPERTIES_ALTERNATES+=" ${OPTARG}"
 	    ;;
 	c)
 	    CHECKOUT_BRANCH=$OPTARG
 	    ;;
 	e)
-	    PROPERTIES_EXCLUSIONS+=("$OPTARG")
+	    PROPERTIES_EXCLUSIONS+=" ${OPTARG}"
 	    ;;	
 	o)
 	    PROPERTIES_ORG=$OPTARG
@@ -53,7 +53,7 @@ while getopts "a:c:e:o:r:s:t:u:h" opt; do
 	    GITHUB_TOKEN_URI=$OPTARG
 	    ;;
 	u)
-	    UPDATE_BRANCH=$OPTARG
+	    PUSH_BRANCH=$OPTARG
 	    ;;
 	:   )
 	    echo "Unrecognized flag"
@@ -66,37 +66,70 @@ then
     echo "usage: ./index.sh -options"
     echo "options:"
     echo "-h Print this message."
+    echo "-a Zero or more Git URLs for alternate properties repositories to clone."
     echo "-c An optional branch to checkout when performing updates. If not empty then this value will be used to set the -u (update branch) flag. (Default is ${CHECKOUT_BRANCH})."
+    echo "-e Zero or more regular expressions to specify properties that should not be indexed."
     echo "-o The GitHub organization for the properties repo. (Default is ${PROPERTIES_ORG}.)"
     echo "-r The name of the properties repo. (Default is ${PROPERTIES_REPO}.)"
     echo "-s A whosonfirst/go-whosonfirst-iterate-organization URI source to defines repositories to index. (Default is ${ITERATOR_SOURCE}.)"    
     echo "-t A gocloud.dev/runtimevar URI referencing the GitHub API access token to use for updating {PROPERTIES_REPO}. (Default is ${GITHUB_TOKEN_URI}.)"
-    echo "-u The branch name where updates should be pushed. (Default is ${UPDATE_BRANCH})."
+    echo "-u The branch name where updates should be pushed. (Default is ${PUSH_BRANCH})."
     exit 0
 fi
 
 if [ "${CHECKOUT_BRANCH}" != "" ]
 then
-    $UPDATE_BRANCH=$CHECKOUT_BRANCH
+    PUSH_BRANCH=$CHECKOUT_BRANCH
 fi
 
 # First get an access token for writing changes
 
 GITHUB_TOKEN=`${RUNTIMEVAR} ${GITHUB_TOKEN_URI}`
 
-# Clone indexing properties
-
-PROPERTIES_GIT="https://${GITHUB_TOKEN}@github.com/${PROPERTIES_ORG}/${PROPERTIES_REPO}"
+# Git housekeeping
 
 ${GIT} config --global user.email "whosonfirst@localhost"
 ${GIT} config --global user.name "whosonfirst"
 
-${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
+# Clone indexing properties
 
-# Index properties from repos
+PROPERTIES_GIT="https://${GITHUB_TOKEN}@github.com/${PROPERTIES_ORG}/${PROPERTIES_REPO}"
 
-echo ${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL}/properties ${ITERATOR_SOURCE}
-${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL}/properties ${ITERATOR_SOURCE}
+PROPERTIES_LOCAL=/usr/local/data/${PROPERTIES_REPO}
+
+echo ${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
+
+# Clone the alternates
+
+for ALTERNATE_GIT in "${PROPERTIES_ALTERNATES}"
+do
+    ALTERNATE_FNAME=`basename ${ALTERNATE_GIT}`
+    ALTERNATE_LOCAL="/usr/local/data/${ALTERNATE_FNAME}"
+    echo ${GIT} clone --depth 1 ${ALTERNATE_GIT} ${ALTERNATE_LOCAL}
+done
+
+# Build indexing command from flags
+
+INDEXING_CMD="${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL}/properties"
+
+for ALTERNATE_GIT in "${PROPERTIES_ALTERNATES}"
+do
+    ALTERNATE_FNAME=`basename ${ALTERNATE_GIT}`
+    ALTERNATE_LOCAL="/usr/local/data/${ALTERNATE_FNAME}"
+    INDEXING_CMD="{$INDEXING_CMD} -alternate ${ALTERNATE_LOCAL}/properties"
+done
+
+for EXCLUSION in "${PROPERTIES_EXCLUSIONS}"
+do
+    INDEXING_CMD="{$INDEXING_CMD} -exclude ${EXCLUSION}"
+done
+
+# Actually do the indexing
+
+echo ${INDEXING_CMD} ${ITERATOR_SOURCE}
+# ${INDEXING_CMD} ${ITERATOR_SOURCE}
+
+exit
 
 # Commit changes
 
@@ -109,4 +142,4 @@ fi
 
 ${GIT} add properties
 ${GIT} commit -m "update properties" properties
-${GIT} push origin ${UPDATE_BRANCH}
+${GIT} push origin ${PUSH_BRANCH}
