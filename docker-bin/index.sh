@@ -14,6 +14,8 @@ GIT=`which git`
 RUNTIMEVAR=`which runtimevar`
 INDEX_PROPERTIES=`which index-properties`
 
+INDEX_PROPERTIES="./bin/index-properties"
+
 USAGE=""
 
 # Get CLI options
@@ -66,18 +68,18 @@ PROPERTIES_GIT="https://${GITHUB_TOKEN}@github.com/${PROPERTIES_ORG}/${PROPERTIE
 ${GIT} config --global user.email "whosonfirst@localhost"
 ${GIT} config --global user.name "whosonfirst"
 
-echo ${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
 ${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
 
 # Index properties from repos
 
-echo ${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL} ${ITERATOR_SOURCE}
-${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL} ${ITERATOR_SOURCE}
+echo ${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL}/properties ${ITERATOR_SOURCE}
+${INDEX_PROPERTIES} -iterator-uri org:///tmp -properties ${PROPERTIES_LOCAL}/properties ${ITERATOR_SOURCE}
 
 # Commit changes
 
 cd ${PROPERTIES_LOCAL}
 
+${GIT} checkout -b updates
 ${GIT} add properties
 ${GIT} commit -m "update properties" properties
-${GIT} push origin main
+${GIT} push origin updates

@@ -8,6 +8,12 @@ Go package for working with Who's On First properties
 
 ## Tools
 
+```
+$> make cli
+go build -mod vendor -o bin/report-properties cmd/report-properties/main.go
+go build -mod vendor -o bin/index-properties cmd/index-properties/main.go
+```
+
 ### index-properties
 
 Crawl a series of Who's On First documents and ensure that all their properties have a corresponding property file in your `whosonfirst-properties/properties` directory.
@@ -101,9 +107,11 @@ And then:
 
 ```
 $> docker run whosonfirst-properties-indexing /bin/index.sh \
-	-t 'constant://val={GITHUB_TOKEN}' \
-	-s 'whosonfirst-data://?prefix=whosonfirst-data-admin-xy'
+	-t 'constant://?val={GITHUB_TOKEN}' \
+	-s 'whosonfirst-data://?prefix=whosonfirst-data-admin-'
 ```
+
+_Note: The command above will index all 270+ [whosonfirst-data-admin-*](https://github.com/whosonfirst-data/?q=whosonfirst-data-admin&type=all&language=&sort=) repositories which won't be quick. The idea behind the Docker stuff is to periodically run across all the Who's On First repositories in a hosted container like Amazon's ECS service, or equivalent._
 
 The `index.sh` script bundled with the container is copied from the [docker-bin/index.sh](docker-bin/index.sh) script. It accepts the following arguments:
 
@@ -127,3 +135,5 @@ options:
 ## See also
 
 * https://github.com/whosonfirst/whosonfirst-properties
+* https://github.com/whosonfirst/go-whosonfirst-iterate
+* https://github.com/whosonfirst/go-whosonfirst-iterate-organization

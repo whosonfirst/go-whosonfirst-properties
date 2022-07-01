@@ -8,7 +8,6 @@ import (
 	"github.com/whosonfirst/go-whosonfirst-iterate/v2/emitter"
 	"github.com/whosonfirst/go-whosonfirst-iterate/v2/iterator"
 	"net/url"
-	"log"
 )
 
 func init() {
@@ -64,8 +63,6 @@ func (em *OrganizationEmitter) WalkURI(ctx context.Context, cb emitter.EmitterCa
 		return fmt.Errorf("Failed to parse URI, %w", err)
 	}
 
-	log.Println(uri, u)
-	
 	organization := u.Scheme
 
 	q := u.Query()
