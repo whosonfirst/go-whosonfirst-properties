@@ -168,6 +168,112 @@ To https://github.com/sfomuseum/sfomuseum-properties
 
 * GitHub API access tokens (specified in the `-t` flag) are derived using the [sfomuseum/runtimevar](https://github.com/sfomuseum/runtimevar#runtimevar-1) tool. Please consult the documentation for the list of supported URI schemes.
 
+### AWS
+
+As usual doing things in AWS is a bit of confusing mess to set things up. The following are basic instructions for run the Docker tools described above as a scheduled task using the AWS Elastic Container Service.
+
+#### Elastic Container Registry
+
+Create a new entry for the `whosonfirst-properties-indexing` container, per the AWS documention. For example:
+
+```
+docker build -t whosonfirst-properties-indexing .
+docker tag whosonfirst-properties-indexing:latest {ACCOUNT}.dkr.ecr.{REGION}.amazonaws.com/whosonfirst-properties-indexing:0.0.1
+docker push {ACCOUNT}.dkr.ecr.{REGION}.amazonaws.com/whosonfirst-properties-indexing:0.0.1
+docker tag whosonfirst-properties-indexing:latest {ACCOUNT}.dkr.ecr.{REGION}.amazonaws.com/whosonfirst-properties-indexing:latest
+docker push {ACCOUNT}.dkr.ecr.{REGION}.amazonaws.com/whosonfirst-properties-indexing:latest
+```   
+
+#### Parameter Store
+
+Create a new encrypted key (entry) in the AWS Parameter Store that contains a valid GitHub access token that can be used to update a properties repository.
+
+For the purposes of this documentation we'll call this key `github-properties-token`.
+
+#### IAM
+
+##### Policies
+
+Create a new policy to allow reading the `github-properties-token` AWS Parameter Store entry.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "ssm:DescribeParameters"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": "ssm:GetParameter",
+            "Resource": "arn:aws:ssm:{REGION}:{ACCOUNT}:parameter/github-properties-token"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt"
+            ],
+            "Resource": [
+                "arn:aws:kms:{REGION}:{ACCOUNT}:key/CMK"
+            ]
+        }
+    ]
+}
+```
+
+For the purposes of this documentation we'll call this policy `GetGitHubPropertiesToken`.
+
+##### Roles
+
+Create a new role to run the `whosonfirst-properties-indexing` container with the following policies:
+
+* GetGitHubPropertiesToken
+* AmazonECSTaskExecutionRolePolicy
+
+Make sure it has a "trust relationship" with ECS:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+```
+
+For the purposes of this documentation we'll call this role `PropertiesIndexing`.
+
+### Elastic Container Service
+
+#### Task Definitions
+
+Create a new Linux-based FARGATE task definition referencing the `whosonfirst-properties-indexing` container which assumes the `PropertiesIndexing` role.
+
+For the purposes of this documentation we'll call this task definition `whosonfirst-properties-indexing`.
+
+#### Scheduled Tasks
+
+In a suitable (ECS) cluster create a new scheduled task to run the `whosonfirst-properties-indexing` task definition at a desired interval.
+
+Unless you've already added a container override in the task definition, create one in the scheduled task. For example:
+
+```
+/bin/index.sh,-a,-s,sfomuseum-data://?prefix=whosonfirst-data&exclude=whosonfirst-data-venue-,-t,awsparamstore://github-properties-token?region={REGION}&credentials=iam:
+```
+
+The command above will index all the properties in all the `whosonfirst-data-` repositories except those starting with `whosonfirst-data-venue`. Note the use of the `awsparamstore` token parameter (`-t`) to read a GitHub access token from AWS Parameter Store.
+
 ## See also
 
 * https://github.com/whosonfirst/whosonfirst-properties
