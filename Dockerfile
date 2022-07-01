@@ -22,7 +22,7 @@ FROM alpine
 RUN mkdir /usr/local/data
 
 RUN apk update && apk upgrade \
-    && apk add git
+    && apk add git bash
 
 COPY --from=gotools /bin/index-properties /bin/index-properties
 COPY --from=gotools /bin/runtimevar /bin/runtimevar

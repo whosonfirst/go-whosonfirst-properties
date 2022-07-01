@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-# Note: This does not support alternate properties directories yet
+# Note: bash is necessary for the `FOO+=" ${OPTARG}"` stuff below which does not
+# work using plain-old sh under alpine.
 
 PROPERTIES_ORG=whosonfirst
 PROPERTIES_REPO=whosonfirst-properties
-
 
 PROPERTIES_ALTERNATES=""
 PROPERTIES_EXCLUSIONS=""
@@ -83,6 +83,7 @@ then
 fi
 
 # First get an access token for writing changes
+# See also: https://github.com/sfomuseum/runtimevar
 
 GITHUB_TOKEN=`${RUNTIMEVAR} ${GITHUB_TOKEN_URI}`
 
@@ -97,7 +98,7 @@ PROPERTIES_GIT="https://${GITHUB_TOKEN}@github.com/${PROPERTIES_ORG}/${PROPERTIE
 
 PROPERTIES_LOCAL=/usr/local/data/${PROPERTIES_REPO}
 
-echo ${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
+${GIT} clone --depth 1 ${PROPERTIES_GIT} ${PROPERTIES_LOCAL}
 
 # Clone the alternates
 
@@ -105,7 +106,7 @@ for ALTERNATE_GIT in "${PROPERTIES_ALTERNATES}"
 do
     ALTERNATE_FNAME=`basename ${ALTERNATE_GIT}`
     ALTERNATE_LOCAL="/usr/local/data/${ALTERNATE_FNAME}"
-    echo ${GIT} clone --depth 1 ${ALTERNATE_GIT} ${ALTERNATE_LOCAL}
+    ${GIT} clone --depth 1 ${ALTERNATE_GIT} ${ALTERNATE_LOCAL}
 done
 
 # Build indexing command from flags
@@ -116,20 +117,18 @@ for ALTERNATE_GIT in "${PROPERTIES_ALTERNATES}"
 do
     ALTERNATE_FNAME=`basename ${ALTERNATE_GIT}`
     ALTERNATE_LOCAL="/usr/local/data/${ALTERNATE_FNAME}"
-    INDEXING_CMD="{$INDEXING_CMD} -alternate ${ALTERNATE_LOCAL}/properties"
+    INDEXING_CMD="${INDEXING_CMD} -alternate ${ALTERNATE_LOCAL}/properties"
 done
 
 for EXCLUSION in "${PROPERTIES_EXCLUSIONS}"
 do
-    INDEXING_CMD="{$INDEXING_CMD} -exclude ${EXCLUSION}"
+    INDEXING_CMD="${INDEXING_CMD} -exclude ${EXCLUSION}"
 done
 
 # Actually do the indexing
 
 echo ${INDEXING_CMD} ${ITERATOR_SOURCE}
-# ${INDEXING_CMD} ${ITERATOR_SOURCE}
-
-exit
+${INDEXING_CMD} ${ITERATOR_SOURCE}
 
 # Commit changes
 

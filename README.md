@@ -93,7 +93,7 @@ id,prefix,name,description
 
 ## Docker
 
-Yes, but not completely.
+### Basics
 
 There is a [Dockerfile](Dockerfile) for building a container designed to clone a specific properties (defintions) repo, records properties for all the files from multiple repositories in a given organization and commit those changes.
 
@@ -120,15 +120,51 @@ $> ./docker-bin/index.sh -h
 usage: ./index.sh -options
 options:
 -h Print this message.
+-a Zero or more Git URLs for alternate properties repositories to clone.
+-c An optional branch to checkout when performing updates. If not empty then this value will be used to set the -u (update branch) flag. (Default is ).
+-e Zero or more regular expressions to specify properties that should not be indexed.
 -o The GitHub organization for the properties repo. (Default is whosonfirst.)
 -r The name of the properties repo. (Default is whosonfirst-properties.)
 -s A whosonfirst/go-whosonfirst-iterate-organization URI source to defines repositories to index. (Default is whosonfirst-data:\/\/?prefix=whosonfirst-data-&exclude=whosonfirst-data-venue-.)
 -t A gocloud.dev/runtimevar URI referencing the GitHub API access token to use for updating {PROPERTIES_REPO}. (Default is constant://?val=s33kret.)
+-u The branch name where updates should be pushed. (Default is main).
 ```
 
-### Notes
+### Fancy
 
-* Alternate property definition sources are not supported by the `index.sh` script yet.
+Here's a more sophisticated example. In this instance the "principal" properties repository is [sfomuseum/sfomuseum-properties](https://github.com/sfomuseum/sfomuseum-properties) but the `whosonfirst/whosonfirst-properties` repository is used as an "alternate" (source of property definitions). In this way the `sfomuseum-properties` should only contain property definitions unique the sfomuseum-specific projects.
+
+Additionally properties starting in `misc` are excluded (`-e misc`) from consideration and the final updates are pushed to a `testing2` branch (`-c testing2`).
+
+In this example only a single repository is indexed from the `sfomuseum-data` organization (`-s 'sfomuseum-data://?prefix=sfomuseum-data-maps'`).
+
+```
+$> docker run whosonfirst-properties-indexing /bin/index.sh \
+	-a https://github.com/whosonfirst/whosonfirst-properties.git \
+	-e misc \
+	-o sfomuseum \
+	-s 'sfomuseum-data://?prefix=sfomuseum-data-maps' \
+	-t 'constant://?val={GITHUB_TOKEN}' \
+	-r sfomuseum-properties \
+	-c testing2
+	
+Cloning into '/usr/local/data/sfomuseum-properties'...
+Cloning into '/usr/local/data/whosonfirst-properties.git'...
+./bin/index-properties -iterator-uri org:///tmp -properties /usr/local/data/sfomuseum-properties/properties -alternate /usr/local/data/whosonfirst-properties.git/properties -exclude misc sfomuseum-data://?prefix=sfomuseum-data-maps
+2022/07/01 22:31:50 time to index paths (1) 1.570320779s
+2022/07/01 22:31:50 time to index paths (1) 3.087979488s
+Switched to a new branch 'testing2'
+On branch testing2
+nothing to commit, working tree clean
+remote: 
+remote: Create a pull request for 'testing2' on GitHub by visiting:        
+remote:      https://github.com/sfomuseum/sfomuseum-properties/pull/new/testing2        
+remote: 
+To https://github.com/sfomuseum/sfomuseum-properties
+ * [new branch]      testing2 -> testing2
+ ```
+ 
+### Notes
 
 * GitHub API access tokens (specified in the `-t` flag) are derived using the [sfomuseum/runtimevar](https://github.com/sfomuseum/runtimevar#runtimevar-1) tool. Please consult the documentation for the list of supported URI schemes.
 
