@@ -71,7 +71,7 @@ func (p *Property) EnsureId() error {
 		return fmt.Errorf("Failed to create new ID provider, %w", err)
 	}
 
-	i, err := id_provider.NewID()
+	i, err := id_provider.NewID(ctx)
 
 	if err != nil {
 		return fmt.Errorf("Failed to create new ID, %w", err)
