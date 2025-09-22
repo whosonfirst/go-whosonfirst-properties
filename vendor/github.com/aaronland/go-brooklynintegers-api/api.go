@@ -3,19 +3,63 @@ package api
 import (
 	"context"
 	"fmt"
+	"io"
+	"log/slog"
+	"net/http"
+	"net/url"
+	"sync"
+
 	"github.com/aaronland/go-artisanal-integers/client"
 	"github.com/cenkalti/backoff/v4"
 	"github.com/tidwall/gjson"
 	"go.uber.org/ratelimit"
-	"io"
-	"log"
-	"net/http"
-	"net/url"
 )
 
+// In principle this could also be done with a sync.OnceFunc call but that will
+// require that everyone uses Go 1.21 (whose package import changes broke everything)
+// which is literally days old as I write this. So maybe a few releases after 1.21.
+
+var register_mu = new(sync.RWMutex)
+var register_map = map[string]bool{}
+
 func init() {
+
 	ctx := context.Background()
-	client.RegisterClient(ctx, "brooklynintegers", NewAPIClient)
+	err := RegisterClientSchemes(ctx)
+
+	if err != nil {
+		panic(err)
+	}
+}
+
+// RegisterClientSchemes will explicitly register all the schemes associated with the `client.Client` interface.
+func RegisterClientSchemes(ctx context.Context) error {
+
+	roster := map[string]client.ClientInitializeFunc{
+		"brooklynintegers": NewAPIClient,
+	}
+
+	register_mu.Lock()
+	defer register_mu.Unlock()
+
+	for scheme, fn := range roster {
+
+		_, exists := register_map[scheme]
+
+		if exists {
+			continue
+		}
+
+		err := client.RegisterClient(ctx, scheme, fn)
+
+		if err != nil {
+			return fmt.Errorf("Failed to register client for '%s', %w", scheme, err)
+		}
+
+		register_map[scheme] = true
+	}
+
+	return nil
 }
 
 type APIClient struct {
@@ -130,7 +174,7 @@ func (client *APIClient) NextInt(ctx context.Context) (int64, error) {
 		i, err := rsp.Int()
 
 		if err != nil {
-			log.Println(err)
+			slog.Error("Failed to derive integer", "error", err)
 			return err
 		}
 
@@ -155,11 +199,16 @@ func (client *APIClient) executeMethod(ctx context.Context, method string, param
 
 	url := client.Scheme + "://" + client.Host + "/" + client.Endpoint
 
+	logger := slog.Default()
+
 	params.Set("method", method)
+
+	logger.Debug("Execute", "url", url)
 
 	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
 
 	if err != nil {
+		logger.Error("Failed to create request", "error", err)
 		return nil, fmt.Errorf("Failed to create request (%s), %w", url, err)
 	}
 
@@ -170,14 +219,21 @@ func (client *APIClient) executeMethod(ctx context.Context, method string, param
 	rsp, err := client.http_client.Do(req)
 
 	if err != nil {
+		logger.Error("Failed to execute request", "error", err)
 		return nil, fmt.Errorf("Failed to create request (%s), %w", url, err)
 	}
 
 	defer rsp.Body.Close()
 
+	if rsp.StatusCode != http.StatusOK {
+		logger.Error("API did not return OK", "code", rsp.StatusCode, "message", rsp.Status)
+		return nil, fmt.Errorf("API did not return OK")
+	}
+
 	body, err := io.ReadAll(rsp.Body)
 
 	if err != nil {
+		logger.Error("Failed to read response", "error", err)
 		return nil, fmt.Errorf("Failed to read response, %w", err)
 	}
 

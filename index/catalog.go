@@ -3,12 +3,12 @@ package index
 import (
 	"context"
 	"fmt"
-	"log"
+	"log/slog"
 	"os"
+	"io/fs"
 	"path/filepath"
 	"sync"
 
-	"github.com/whosonfirst/go-whosonfirst-crawl"
 	"github.com/whosonfirst/go-whosonfirst-properties"	
 )
 
@@ -16,52 +16,40 @@ import (
 type CatalogPropertiesOptions struct {
 	// Lookup is a `sync.Map` instance whose keys are the names of properties that have already been encountered (crawl property definition files).
 	Lookup *sync.Map
-	// Logger is a `log.Logger` instance used to log state and feedback.
-	Logger *log.Logger
 }
 
 // CatalogProperties() will crawl one or more directories containing Who's On First style property definition
 // files and cataloging each match in a `sync.Map` instance.
 func CatalogProperties(ctx context.Context, opts *CatalogPropertiesOptions, paths ...string) error {
 
-	cb := func(path string, info os.FileInfo) error {
-
-		select {
-
-		case <-ctx.Done():
-			return nil
-		default:
-			// pass
-		}
-
-		if info.IsDir() {
-			return nil
-		}
-
-		if filepath.Ext(path) != ".json" {
-			return nil
-		}
-
-		prop, err := properties.NewPropertyFromFile(path)
-
-		if err != nil {
-			opts.Logger.Printf("Failed to parse '%s' as a properties file, %v", path, err)
-			return nil
-		}
-
-		opts.Lookup.Store(prop.String(), true)
-		return nil
-	}
-
 	for _, path := range paths {
+		
+		dir_fs := os.DirFS(path)
 
-		cr := crawl.NewCrawler(path)
-		err := cr.Crawl(cb)
+		fs.WalkDir(dir_fs, ".", func(path string, info fs.DirEntry, err error) error {
+			
+			if err != nil {
+				log.Fatal(err)
+			}
+			
+			if info.IsDir() {
+				return nil
+			}
+			
+			if filepath.Ext(path) != ".json" {
+				return nil
+			}
+			
+			prop, err := properties.NewPropertyFromFile(path)
+			
+			if err != nil {
+				slog.Warn("Failed to parse as properties file", "path", path, "error", err)
+				return nil
+			}
 
-		if err != nil {
-			return fmt.Errorf("Failed to crawl properties source '%s', %v", path, err)
-		}
-
+			opts.Lookup.Store(prop.String(), true)
+			return nil
+		})
 	}
 
 	return nil

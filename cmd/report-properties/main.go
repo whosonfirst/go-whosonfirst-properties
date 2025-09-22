@@ -4,13 +4,13 @@ import (
 	"encoding/csv"
 	"flag"
 	"io"
+	"io/fs"
 	"log"
 	"os"
 	"path/filepath"
 	"strconv"
 	"sync"
 
-	"github.com/whosonfirst/go-whosonfirst-crawl"
 	"github.com/whosonfirst/go-whosonfirst-properties"	
 )
 
@@ -54,18 +54,24 @@ func main() {
 
 	wr.Write(row)
 
-	cb := func(path string, info os.FileInfo) error {
+	props_dir := os.DirFS(*props)
 
+	err := fs.WalkDir(dir_fs, ".", func(path string, info fs.DirEntry, err error) error {
+		
+		if err != nil {
+			return err
+		}
+		
 		if info.IsDir() {
 			return nil
 		}
-
+		
 		if filepath.Ext(path) != ".json" {
 			return nil
 		}
-
+		
 		prop, err := properties.NewPropertyFromFile(path)
-
+		
 		if err != nil {
 			return err
 		}
@@ -88,9 +94,6 @@ func main() {
 
 		return nil
 	}
-
-	cr := crawl.NewCrawler(*props)
-	err = cr.Crawl(cb)
 
 	if err != nil {
 		log.Fatal(err)

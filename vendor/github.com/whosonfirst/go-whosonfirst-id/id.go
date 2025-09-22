@@ -1,18 +1,26 @@
 package id
 
-// The two import statements to ensure that packages are loaded
-// in the correct order.
-
-import (
-	_ "github.com/aaronland/go-uid-whosonfirst"
-)
-
 import (
 	"context"
 	"fmt"
-	"github.com/aaronland/go-uid"
+
 	_ "github.com/aaronland/go-uid-proxy"
+	_ "github.com/aaronland/go-uid-whosonfirst"
+	
+	"github.com/aaronland/go-uid"
 )
+
+func NewID() (int64, error) {
+
+	ctx := context.Background()
+	pr, err := NewProvider(ctx)
+
+	if err != nil {
+		return -1, err
+	}
+
+	return pr.NewID(ctx)
+}
 
 // type Provider is an interface for providing uniquer identifiers.
 type Provider interface {
@@ -30,6 +38,7 @@ type WOFProvider struct {
 // settings.
 func NewProvider(ctx context.Context) (Provider, error) {
 	uri := "proxy://?provider=whosonfirst://"
+	// uri := "proxy:///?provider=whosonfirst://&minimum=5&pool=memory%3A%2F%2F"
 	return NewProviderWithURI(ctx, uri)
 }
 
