@@ -4,14 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/facebookgo/atomicfile"
-	"github.com/tidwall/pretty"
-	"github.com/whosonfirst/go-whosonfirst-id"
 	"io"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
+
+	"github.com/facebookgo/atomicfile"
+	"github.com/tidwall/pretty"
+	"github.com/whosonfirst/go-whosonfirst-id"
 )
 
 // re_name is a regular expression for testing whether a property key is a `name:*` property.
