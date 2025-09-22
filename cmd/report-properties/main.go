@@ -1,60 +1,56 @@
 package main
 
 import (
-	"encoding/csv"
 	"flag"
 	"io"
 	"io/fs"
 	"log"
+	_ "log/slog"
 	"os"
 	"path/filepath"
 	"strconv"
-	"sync"
 
+	"github.com/sfomuseum/go-csvdict/v2"
 	"github.com/whosonfirst/go-whosonfirst-properties"
 )
 
 func main() {
 
-	props := flag.String("properties", "", "The path to your whosonfirst-properties/properties directory")
-	report := flag.String("report", "", "The path to write your whosonfirst-properties report. Default is STDOUT.")
+	var root string
+	var report string
+
+	flag.StringVar(&root, "properties", "", "The path to your whosonfirst-properties/properties directory")
+	flag.StringVar(&report, "report", "", "The path to write your whosonfirst-properties report. Default is STDOUT.")
 
 	flag.Parse()
 
-	_, err := os.Stat(*props)
+	_, err := os.Stat(root)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	var fh io.Writer
+	var wr io.WriteCloser
 
-	if *report == "" {
-		fh = os.Stdout
+	if report == "" {
+		wr = os.Stdout
 	} else {
-		f, err := os.OpenFile(*report, os.O_RDWR|os.O_CREATE, 0644)
+		f_wr, err := os.OpenFile(report, os.O_RDWR|os.O_CREATE, 0644)
 
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		defer f.Close()
-		fh = f
+		wr = f_wr
 	}
 
-	wr := csv.NewWriter(fh)
-	mu := new(sync.Mutex)
+	csv_wr, err := csvdict.NewWriter(wr)
 
-	row := []string{
-		"id",
-		"prefix",
-		"name",
-		"description",
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	wr.Write(row)
-
-	props_fs := os.DirFS(*props)
+	props_fs := os.DirFS(root)
 
 	err = fs.WalkDir(props_fs, ".", func(path string, info fs.DirEntry, err error) error {
 
@@ -70,23 +66,28 @@ func main() {
 			return nil
 		}
 
-		prop, err := properties.NewPropertyFromFile(path)
+		r, err := props_fs.Open(path)
 
 		if err != nil {
 			return err
 		}
 
-		mu.Lock()
-		defer mu.Unlock()
+		defer r.Close()
 
-		row := []string{
-			strconv.FormatInt(prop.Id, 10),
-			prop.Prefix,
-			prop.Name,
-			prop.Description,
+		prop, err := properties.NewPropertyFromReader(r)
+
+		if err != nil {
+			return err
 		}
 
-		err = wr.Write(row)
+		row := map[string]string{
+			"id":          strconv.FormatInt(prop.Id, 10),
+			"prefix":      prop.Prefix,
+			"name":        prop.Name,
+			"description": prop.Description,
+		}
+
+		err = csv_wr.WriteRow(row)
 
 		if err != nil {
 			return err
@@ -99,13 +100,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	wr.Flush()
+	csv_wr.Flush()
 
-	err = wr.Error()
+	if report == "" {
+		err := wr.Close()
 
-	if err != nil {
-		log.Fatal(err)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
-
-	os.Exit(0)
 }

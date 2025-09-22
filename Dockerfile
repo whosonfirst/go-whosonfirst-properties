@@ -5,16 +5,15 @@ RUN mkdir /build
 COPY . /build/go-whosonfirst-properties
 
 RUN apk update && apk upgrade \
-    && apk add git \
-    #
-    && ls -al /build/go-whosonfirst-properties \
-    && cd /build/go-whosonfirst-properties \
-    && go build -mod vendor -o /bin/index-properties cmd/index-properties/main.go \
-    && cd - \
-    #
-    && git clone --depth https://github.com/aaronland/gocloud.git /build/gocloud \
-    && cd /build/gocloud \
-    && go build -mod vendor -o /bin/runtimevar cmd/runtimevar/main.go 
+    && apk add git
+
+RUN cd /build/go-whosonfirst-properties \
+    && go build -mod vendor -ldflags="-s -w" -o /bin/index-properties cmd/index-properties/main.go
+
+RUN cd /build \
+    && git clone --depth 1 https://github.com/aaronland/gocloud.git \
+    && cd gocloud \
+    && go build -mod vendor -ldflags="-s -w" -o /bin/runtimevar cmd/runtimevar/main.go 
     
     
 FROM alpine
