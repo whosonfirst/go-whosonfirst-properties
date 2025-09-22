@@ -9,7 +9,6 @@ require (
 	github.com/tidwall/pretty v1.2.1
 	github.com/whosonfirst/go-whosonfirst-id v1.3.1
 	github.com/whosonfirst/go-whosonfirst-iterate-git/v3 v3.0.5
-	github.com/whosonfirst/go-whosonfirst-iterate/v2 v2.8.0
 	github.com/whosonfirst/go-whosonfirst-iterate/v3 v3.2.0
 )
 
@@ -46,12 +45,10 @@ require (
 	github.com/skeema/knownhosts v1.3.1 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/whosonfirst/go-ioutil v1.0.2 // indirect
-	github.com/whosonfirst/go-whosonfirst-crawl v0.2.2 // indirect
 	github.com/whosonfirst/go-whosonfirst-feature v0.0.28 // indirect
 	github.com/whosonfirst/go-whosonfirst-github v0.9.2 // indirect
 	github.com/whosonfirst/go-whosonfirst-sources v0.1.0 // indirect
 	github.com/whosonfirst/go-whosonfirst-uri v1.3.0 // indirect
-	github.com/whosonfirst/walk v0.0.2 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	go.uber.org/ratelimit v0.3.1 // indirect
 	golang.org/x/crypto v0.40.0 // indirect

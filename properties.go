@@ -12,7 +12,7 @@ import (
 
 	"github.com/facebookgo/atomicfile"
 	"github.com/tidwall/pretty"
-	"github.com/whosonfirst/go-whosonfirst-id"	
+	"github.com/whosonfirst/go-whosonfirst-id"
 )
 
 // re_name is a regular expression for testing whether a property key is a `name:*` property.

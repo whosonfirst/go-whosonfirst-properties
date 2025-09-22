@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/whosonfirst/go-whosonfirst-properties"	
+	"github.com/whosonfirst/go-whosonfirst-properties"
 )
 
 func main() {
@@ -54,24 +54,24 @@ func main() {
 
 	wr.Write(row)
 
-	props_dir := os.DirFS(*props)
+	props_fs := os.DirFS(*props)
 
-	err := fs.WalkDir(dir_fs, ".", func(path string, info fs.DirEntry, err error) error {
-		
+	err = fs.WalkDir(props_fs, ".", func(path string, info fs.DirEntry, err error) error {
+
 		if err != nil {
 			return err
 		}
-		
+
 		if info.IsDir() {
 			return nil
 		}
-		
+
 		if filepath.Ext(path) != ".json" {
 			return nil
 		}
-		
+
 		prop, err := properties.NewPropertyFromFile(path)
-		
+
 		if err != nil {
 			return err
 		}
@@ -93,7 +93,7 @@ func main() {
 		}
 
 		return nil
-	}
+	})
 
 	if err != nil {
 		log.Fatal(err)
