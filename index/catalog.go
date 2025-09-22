@@ -3,12 +3,13 @@ package index
 import (
 	"context"
 	"fmt"
-	"github.com/whosonfirst/go-whosonfirst-crawl"
-	"github.com/whosonfirst/go-whosonfirst-properties"
 	"log"
 	"os"
 	"path/filepath"
 	"sync"
+
+	"github.com/whosonfirst/go-whosonfirst-crawl"
+	"github.com/whosonfirst/go-whosonfirst-properties"	
 )
 
 // CatalogPropertiesOptions is a struct containing configuration data for the `CatalogProperties` method.

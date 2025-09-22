@@ -3,15 +3,16 @@ package index
 import (
 	"context"
 	"fmt"
-	"github.com/sfomuseum/go-flags/multi"
-	"github.com/tidwall/gjson"
-	"github.com/whosonfirst/go-whosonfirst-iterate/v2/emitter"
-	"github.com/whosonfirst/go-whosonfirst-properties"
 	"io"
 	"log"
 	"os"
 	"path/filepath"
 	"sync"
+
+	"github.com/sfomuseum/go-flags/multi"
+	"github.com/tidwall/gjson"
+	"github.com/whosonfirst/go-whosonfirst-iterate/v2/emitter"
+	"github.com/whosonfirst/go-whosonfirst-properties"	
 )
 
 // EmitterCallbackFuncOptions is a struct containing configuration options for the `EmitterCallbackFunc` method.

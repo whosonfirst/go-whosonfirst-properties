@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine AS gotools
+FROM golang:1.25-alpine AS gotools
 
 RUN mkdir /build
 
@@ -12,8 +12,8 @@ RUN apk update && apk upgrade \
     && go build -mod vendor -o /bin/index-properties cmd/index-properties/main.go \
     && cd - \
     #
-    && git clone https://github.com/sfomuseum/runtimevar.git /build/runtimevar \
-    && cd /build/runtimevar \
+    && git clone --depth https://github.com/aaronland/gocloud.git /build/gocloud \
+    && cd /build/gocloud \
     && go build -mod vendor -o /bin/runtimevar cmd/runtimevar/main.go 
     
     

@@ -3,14 +3,15 @@ package main
 import (
 	"encoding/csv"
 	"flag"
-	"github.com/whosonfirst/go-whosonfirst-crawl"
-	"github.com/whosonfirst/go-whosonfirst-properties"
 	"io"
 	"log"
 	"os"
 	"path/filepath"
 	"strconv"
 	"sync"
+
+	"github.com/whosonfirst/go-whosonfirst-crawl"
+	"github.com/whosonfirst/go-whosonfirst-properties"	
 )
 
 func main() {

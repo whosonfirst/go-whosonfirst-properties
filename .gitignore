@@ -1,9 +1,5 @@
 *~
-pkg
-src
-!vendor/src
 bin
-!bin/.gitignore
-*.log
-*.json
-.travis.yml
+go.work*
+work
+.DS_Store

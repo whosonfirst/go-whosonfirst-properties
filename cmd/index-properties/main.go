@@ -4,14 +4,16 @@
 package main
 
 import (
-	_ "github.com/whosonfirst/go-whosonfirst-iterate-organization"
 )
 
 import (
 	"context"
 	"flag"
+
+	_ "github.com/whosonfirst/go-whosonfirst-iterate-git/v3/github"
+	
 	"github.com/sfomuseum/go-flags/multi"
-	"github.com/whosonfirst/go-whosonfirst-iterate/v2/iterator"
+	"github.com/whosonfirst/go-whosonfirst-iterate/v3"
 	"github.com/whosonfirst/go-whosonfirst-properties/index"
 	"log"
 	"sync"
