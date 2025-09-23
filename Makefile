@@ -8,3 +8,9 @@ cli:
 docker:
 	docker build -t whosonfirst-properties-indexing .	
 
+
+wasmjs:
+	GOOS=js GOARCH=wasm \
+		go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -tags wasmjs \
+		-o www/wasm/wof_properties.wasm \
+		cmd/wof-properties-wasm/main.go

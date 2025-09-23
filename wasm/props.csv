@@ -1,0 +1,1116 @@
+description,id,name,prefix
+,1159079261,admin_1r,SIJ
+,1159079259,hasc_id,SIJ
+,1159079897,eng_x_preferred,abbreviation
+"The colloquial, informal abbreviation for a place.",1158844675,{lang}_x_colloquial,abrv
+,1159079245,eng_x_preferred,abrv
+The historical abbreviation for a place.,1158844669,{lang}_x_historical,abrv
+The preferred abbreviation for a place.,1158844673,{lang}_x_preferred,abrv
+An unclassified abbreviation used for a place.,1158844677,{lang}_x_unknown,abrv
+An uncommon variant abbreviation used for a place.,1158844667,{lang}_x_variant,abrv
+,1159080439,api,acgov
+,1159080437,type,acgov
+,1159080447,elev,acme
+,1159080445,site_id,acme
+,1158808009,city,addr
+,1158808003,conscriptionnumber,addr
+,1158808011,country,addr
+,1158808019,district,addr
+,1159080481,email,addr
+,1158808035,facebook,addr
+,1158808043,flats,addr
+,1158808013,full,addr
+,1158808037,github,addr
+,1158808015,hamlet,addr
+,1158808001,housename,addr
+,1158808007,housenumber,addr
+,1158808049,instagram,addr
+,1159080359,intersection,addr
+,1159080361,notes,addr
+,1159080483,opentable,addr
+,1159080357,phon,addr
+,1158808029,phone,addr
+,1158808047,place,addr
+,1159080485,postal,addr
+,1158808045,postalcode,addr
+,1159080351,postcode,addr
+,1158808025,province,addr
+,1158808027,state,addr
+,1158807999,street,addr
+,1158808021,subdistrict,addr
+,1158808017,suburb,addr
+,1158808033,twitter,addr
+,1159080451,url,addr
+,1158808031,website,addr
+,1159080479,yelp,addr
+,1158808039,youtube,addr
+,1159079611,DOCDATUM,amsgis
+,1159079663,DOCNR,amsgis
+,1159079617,INGSDATUM,amsgis
+,1159079659,VOLLCODE,amsgis
+,1159079735,_categories,amsgis
+,1159079613,_id,amsgis
+,1159079637,categorie,amsgis
+,1159080081,CODE,amsgis
+,1159080079,display,amsgis
+,1159079681,externe_id,amsgis
+,1159080073,NAAM,amsgis
+,1159079665,online_tijdsaspect,amsgis
+,1159079689,titel,amsgis
+,1159079635,titel_key,amsgis
+,1159079645,type,amsgis
+,1159080083,type_2,amsgis
+,1159080077,uri,amsgis
+,1159080223,bez_name,atgov
+,1159080221,bez_nr,atgov
+,1159080217,gem_name,atgov
+,1159080225,gkz,atgov
+,1159079725,FID_TXT,atldpcd
+,1159079749,GLOBALID,atldpcd
+,1159079687,NAME,atldpcd
+,1159079727,NPU,atldpcd
+,1159079745,OBJECTID,atldpcd
+,1159079729,OLD_NAME,atldpcd
+,1159080229,POA_CODE,ausstat
+,1159080231,POA_NAME,ausstat
+,1159080227,SQKM,ausstat
+,1159080105,bez_name,austriaod
+,1159080113,bez_nr,austriaod
+,1159080117,gem_name,austriaod
+,1159080109,gem_nr,austriaod
+,1159080119,land_name,austriaod
+,1159080115,land_nr,austriaod
+,1159080107,objectid,austriaod
+,1159079711,LISTNAME,azavea
+,1159079669,MAPNAME,azavea
+,1159079703,NAME,azavea
+,1159079743,label,baltomoit
+,1159079701,nbrdesc,baltomoit
+,1159080241,AREA,begov
+,1159080259,BEGIN_LIFE,begov
+,1159080247,END_LIFE,begov
+,1159080243,ID,begov
+,1159080257,INSPIRE_ID,begov
+,1159080239,MU_ID,begov
+,1159080245,MU_NAME_DU,begov
+,1159080249,MU_NAME_FR,begov
+,1159080253,MU_NAT_COD,begov
+,1159080251,NAT_CODE,begov
+,1159080263,PZ_ID,begov
+,1159080269,PZ_NAME_DU,begov
+,1159080265,PZ_NAME_FR,begov
+,1159080267,PZ_NAT_COD,begov
+,1159080261,VERSIONID,begov
+,1159080091,datpublbs,begov
+,1159080099,lengte,begov
+,1159080085,naam,begov
+,1159080087,niscode,begov
+,1159080097,numac,begov
+,1159080089,oidn,begov
+,1159080101,oppervl,begov
+,1159080103,terrid,begov
+,1159080095,uidn,begov
+,1159080055,latitude,bowie
+,1159080053,longitude,bowie
+,1159079695,Name,bra
+,1159079719,Neighborho,bra
+,1159079675,OBJECTID,bra
+,1159079741,NAME,camgov
+,1159079781,N_HOOD,camgov
+,1159079771,Webpage,camgov
+,1159079979,CITY_ID,can-abog
+,1159079973,GEOCODE,can-abog
+,1159079975,GEONAME,can-abog
+,1159079971,HAMLET_ID,can-abog
+,1159079977,PID,can-abog
+,1159079839,NEIGHBOURH,can-bbygov
+,1159079843,OBJECTID_1,can-bbygov
+,1159079837,PSA,can-bbygov
+,1159079573,class,can-calcai
+,1159079577,class_code,can-calcai
+,1159079559,comm_code,can-calcai
+,1159079585,comm_structure,can-calcai
+,1159079583,name,can-calcai
+,1159079567,sector,can-calcai
+,1159079561,srg,can-calcai
+,1159079801,GLOBALID,can-dnvgov
+,1159079815,MET_INPUT,can-dnvgov
+,1159079799,MET_TECH,can-dnvgov
+,1159079807,MET_TECH_R,can-dnvgov
+,1159079819,NBDY_NAME,can-dnvgov
+,1159079817,NBDY_NAME_,can-dnvgov
+,1159079797,OBJECTID,can-dnvgov
+,1159079811,STATS_ID,can-dnvgov
+,1159079813,YEAR,can-dnvgov
+,1159079793,name,can-edmdsd
+,1159079795,number,can-edmdsd
+,1159080197,LSECSTATID,can-gatsudd
+,1159080203,MUN_MRC,can-gatsudd
+,1159080187,NOM_COMM,can-gatsudd
+,1159080193,NOM_HISTOR,can-gatsudd
+,1159080195,NO_COMM,can-gatsudd
+,1159080191,NO_COMM_1,can-gatsudd
+,1159080189,POP_2006,can-gatsudd
+,1159080205,SECTEUR,can-gatsudd
+,1159080199,SECTREG_2,can-gatsudd
+,1159079579,no_arr,can-mntsmvt
+,1159079555,no_qr,can-mntsmvt
+,1159079581,nom_arr,can-mntsmvt
+,1159079569,nom_mun,can-mntsmvt
+,1159079575,nom_qr,can-mntsmvt
+,1159079845,NEIGHNUM,can-nwds
+,1159079847,NEIGH_NAME,can-nwds
+,1159079549,Name,can-ons
+,1159079543,Name2016,can-ons
+,1159079791,Name2016_F,can-ons
+,1159079541,Name2017,can-ons
+,1159079557,ONSID,can-ons
+,1159079547,id,can-wpgppd
+,1159079545,name,can-wpgppd
+,1159080121,definit,canvec-hydro
+,1159080123,definit_en,canvec-hydro
+,1159079595,BU_CODE,cbsnl
+,1159079593,BU_NAAM,cbsnl
+,1159079601,GM_CODE,cbsnl
+,1159079587,GM_NAAM,cbsnl
+,1159079599,IND_WBI,cbsnl
+,1159079603,OAD,cbsnl
+,1159079591,STED,cbsnl
+,1159079605,WATER,cbsnl
+,1159079597,WK_CODE,cbsnl
+,1159079909,WK_NAAM,cbsnl
+,1159080275,os_uuid,chgov
+,1159080271,uuid,chgov
+,1159080233,alpha,clustr
+,1159080323,area,clustr
+,1159080325,count,clustr
+,1159080329,density,clustr
+,1159080331,perimeter,clustr
+,1159080367,concordances_total,counts
+,1159080373,languages_official,counts
+,1159080387,languages_spoken,counts
+,1159080385,languages_total,counts
+,1159080379,names_colloquial,counts
+,1159080397,names_languages,counts
+,1159080369,names_prefered,counts
+,1159080395,names_total,counts
+,1159080377,names_variant,counts
+,1159079775,NBHD_ID,denvercpd
+,1159079759,NBHD_NAME,denvercpd
+,1159080337,bdyset_id,ebc
+,1159080341,ed_abbrev,ebc
+,1159080339,ed_id,ebc
+,1159080335,ed_name,ebc
+,1159080347,feat_area,ebc
+,1159080333,feat_perim,ebc
+,1159080343,gazette_dt,ebc
+,1159080349,objectid,ebc
+"Indicates when a place stopped being a going concern. The semantics for something ceasing may vary from placetype to placetype. For example, a venue may cease operations or a country may split in to multiple countries.",1158804491,cessation,edtf
+,1159080071,deprecate,edtf
+Indicates the date when a place was determined to be invalid (was never a going concern).,1158804489,deprecated,edtf
+Indicates the date when a place was first created or established.,1158804487,inception,edtf
+Indicates the date when a record was superseded by another record.,1158804485,superseded,edtf
+,1159079621,CODBAR,esp-aytomad
+,1159079653,CODBARRIO,esp-aytomad
+,1159079629,CODDISTRIT,esp-aytomad
+,1159079747,NOMBRE,esp-aytomad
+,1159079615,NOMDIS,esp-aytomad
+,1159079667,OBJECTID,esp-aytomad
+,1159079623,C_Barri,esp-cartobcn
+,1159079647,C_Distri,esp-cartobcn
+,1159079627,N_Barri,esp-cartobcn
+,1159079633,N_Distri,esp-cartobcn
+,1159079631,WEB_1,esp-cartobcn
+,1159079655,WEB_4,esp-cartobcn
+,1159080013,Aluejako,figov
+,1159080023,Kunta,figov
+,1159080009,Tunnus,figov
+,1159080005,ajo_pvm,figov
+,1159080037,eng_type,figov
+,1159080031,fin_type,figov
+,1159080029,gml_id,figov
+,1159080035,local_id,figov
+,1159080033,national_code,figov
+,1159079989,nimi,figov
+,1159079987,nimi_se,figov
+,1159080043,swe_type,figov
+,1159079835,c_ar,fra-odp
+,1159079829,c_qu,fra-odp
+,1159079831,c_quinsee,fra-odp
+,1159079833,l_qu,fra-odp
+,1159080283,DEP,frgov
+,1159080285,ID,frgov
+,1159080277,LIB,frgov
+,1159080279,POP2010,frgov
+,1159080287,SURF,frgov
+,1159080281,_COL6,frgov
+,1159080025,Aluejako,fsgov
+,1159080019,Kunta,fsgov
+,1159080045,Tunnus,fsgov
+,1159079999,ajo_pvm,fsgov
+,1159080049,nimi,fsgov
+,1159080051,nimi_se,fsgov
+,1159080211,GSS_CODE,gbr-datalondon
+,1159080213,ONS_INNER,gbr-datalondon
+"The geometric area of a feature, in WGS84 (unprojected lat/lng).",1158804493,area,geom
+"The geometric area of a feature in square meters, in the EPSG:3410 projection.",1158804497,area_square_m,geom
+The bounding box of a feature.,1158804501,bbox,geom
+,1159080459,hash,geom
+The latitude of a feature's geometric centroid.,1158804503,latitude,geom
+The longitude of a feature's geometric centroid.,1158804505,longitude,geom
+,1159079969,src,geom
+,1159080393,type,geom
+,1159079903,id,geonames
+,1159080315,accuracy,gn
+,1159080311,adm1_code,gn
+,1159080321,adm1_name,gn
+,1159080305,adm2_code,gn
+,1159080319,adm2_name,gn
+,1159080313,adm3_code,gn
+,1159080307,adm3_name,gn
+,1779776681,admin1_code,gn
+,1779776687,asciiname,gn
+,1779776679,cc2,gn
+"The record's parent country code, represented using ISO-3166.",1158844681,country,gn
+,1779776677,country_code,gn
+,1779776691,dem,gn
+A single integer giving the elevation (in meters).,1158844683,elevation,gn
+"Represents the GeoNames feature code, or feature type, for a given record.",1158844685,fcode,gn
+,1779776671,feature_class,gn
+,1779776683,feature_code,gn
+,1779776673,geonameid,gn
+,1159080133,gn_country,gn
+,1159080143,gn_fcode,gn
+,1159080177,gn_pop,gn
+The unique GeoNames identifier for a given record.,1158844687,id,gn
+The latitude value for a given record.,1158844691,latitude,gn
+The longitude value for a given record.,1158844693,longitude,gn
+,1779776675,modification_date,gn
+,1159080317,name,gn
+,1159079539,pop,gn
+The population of a given record.,1158844695,population,gn
+,1779776689,timezone,gn
+,1159079533,longitude,goem
+"The record's parent admin0 record, represented using the parent record's GeoPlanet identifier.",1158844697,adm0,gp
+"A unique identifier used by GeoPlanet for a given record. Typically stored as in the wof:concordances property, as well.",1158844699,id,gp
+,1159080215,parent_id,gp
+The version of GeoPlanet used to import a given record.,1158844701,source,gp
+,1159080017,ALUETASO,hkigis
+,1159080015,ID,hkigis
+,1159079883,ID1,hkigis
+,1159079873,KOKOTUN,hkigis
+,1159079851,KOKOTUNNUS,hkigis
+,1159079893,KUNTA,hkigis
+,1159080001,KUNTA_NIMI,hkigis
+,1159080011,K_NIMI_SE,hkigis
+,1159079869,Mtryhm,hkigis
+,1159079993,NIMI,hkigis
+,1159079891,NIMI_ISO,hkigis
+,1159080027,NIMI_SE,hkigis
+,1159079867,PIEN,hkigis
+,1159079887,SUUR,hkigis
+,1159080047,SUURP_TN,hkigis
+,1159080041,SUUR_N_FI,hkigis
+,1159079991,SUUR_N_SE,hkigis
+,1159079879,TILA,hkigis
+,1159079849,TUNNUS,hkigis
+,1159080007,ajo_pvm,hkigis
+,1159079853,aluejako,hkigis
+The coordinate that specifies a intersection's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158860485,latitude,intersection
+The coordinate that specifies a intersection's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158860477,longitude,intersection
+The two-letter country code from ISO 3166-1.,1158821349,country,iso
+The two-letter country code from ISO 3166-1 of the record's parent country.,1158821347,parent,iso
+The two-letter country code and two-letter primary division (region) code from ISO 3166-2. Used for administrative divisions under the country and dependency placetypes.,1158821351,subdivision,iso
+ITU E.164 Country code. https://en.wikipedia.org/wiki/Telephone_numbering_plan,1159079241,country_code,itu
+ITU E.164 Area code. https://en.wikipedia.org/wiki/Telephone_numbering_plan,1159079251,region,itu
+,1159079901,ID,kuogov
+,1159079899,NIMI,kuogov
+"The colloquial, informal label for a place (inclusive of hierarchy).",1158808147,{lang}_x_colloquial,label
+"The colloquial, informal abbreviation for a place (inclusive of hierarchy).",1158808151,{lang}_x_colloquial_abbreviation,label
+The historical label for a place (inclusive of hierarchy).,1158808155,{lang}_x_historical,label
+"The fully qualified preferred label for a place (inclusive of hierarchy), in practice a single element list. Used in Pelias and to generate language-specific map labels. The label:{lang}_x_preferred property takes precedence over wof:label.",1158808157,{lang}_x_preferred,label
+"The preferred label for a place name (exclusive of hierarchy), in practice a single element list. Used in Pelias and to generate language-specific map labels.",1158808159,{lang}_x_preferred_abbreviation,label
+"The preferred disambiguation label for a place (exclusive of hierarchy), in practice a single element list. Either append the feature's placetype or append the parent's name in parenthesis.",1158808161,{lang}_x_preferred_disambiguation,label
+"The preferred longname label for a place (inclusive of placetype), in practice a single element list. Always append the feature's placetype to the preferred name. We generally prefer the transliterated placetype (eg Oblast) over the translated placetype (Territory), and the placetype should be Title Case. In the case of California we'd expect this value to be California State instead of State of California.",1360698519,{lang}_x_preferred_longname,label
+"A feature's preferred placetype label (exclusive of place name and hierarchy), in practice a single element list. While wof:placetype is an enumerated value, this localized value is a string.",1158808163,{lang}_x_preferred_placetype,label
+"A feature's preferred localized shortcode that takes precedence over wof:shortcode (exclusive of place name and hierarchy), in practice a single element list. A short alphabetic code, preferring 3-characters for country (e.g. USA), 2-characters for region (e.g. CA), and either 3-character or 2-character for county (e.g. HUM or HU) placetypes. Other placetypes like venue can also have shortcodes but their length is not standardized, and they may contain alphanumeric values.",1158808165,{lang}_x_preferred_shortcode,label
+Uncommon unclassified labels used for a place (inclusive of hierarchy).,1158808169,{lang}_x_unknown,label
+Uncommon variant labels used for a place (inclusive of hierarchy). Used in mapping and geocoding software and to generate language-specific map labels.,1158808173,{lang}_x_variant,label
+Uncommon variant abbreviations used for a place (exclusive of hierarchy).,1158808175,{lang}_x_variant_abbreviation,label
+Uncommon variant disambiguation labels for a place (exclusive of hierarchy). Either append the feature's placetype or append the parent's name in parenthesis.,1158808177,{lang}_x_variant_disambiguation,label
+"The variant longname labels for a place (inclusive of placetype), as a muilti element list. Always append the feature's placetype to the preferred name. The placetype should be Title Case and not include the value of the preferred longname. Common values can include the translated placetype (Territory) instead of the transliterated placetype (eg Oblast).",1360698521,{lang}_x_variant_longname,label
+"Uncommon variant placetype labels (exclusive of hierarchy). While wof:placetype is an enumerated value, this value is a string value.",1158808179,{lang}_x_variant_placetype,label
+"Uncommon localized shortcodes (exclusive of hierarchy). A short alphabetic code, preferring 3-characters for country (e.g. USA), 2-characters for region (e.g. CA), and either 3-character or 2-character for county (e.g. HUM or HU) placetypes. Other placetypes like venue can also have shortcodes but their length is not standardized, and they may contain alphanumeric values.",1158808181,{lang}_x_variant_shortcode,label
+,1159079709,CERTIFIED,lacity
+,1159079731,DWEBSITE,lacity
+,1159079765,NAME,lacity
+,1159079779,NC_ID,lacity
+,1159079739,NSA,lacity
+,1159079755,OBJECTID,lacity
+,1159079773,WADDRESS,lacity
+"The bounding box area used purely for map labelling and search purposes, and is usually smaller than the geom:bbox. The lbl:bbox is human-generated (not derived from Mapshaper).",1158804503,bbox,lbl
+The coordinate that specifies a label's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158804507,latitude,lbl
+The coordinate that specifies a label's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158804509,longitude,lbl
+"When the feature's label should be removed (or switched to a different representation like exterior ring labels). Float values (though in practice mosts are integer values) that match to web map zoom schema. Common range is 0.0 to 18.0, though they can be greater.",1495037865,max_zoom,lbl
+"When the feature's label should first appear. Float values (though in practice mosts are integer values) that match to web map zoom schema. Common range is 0.0 to 18.0, though they can be greater.",1495037863,min_zoom,lbl
+,1159079125,label_text,lflt
+The coordinate that specifies a 'local' north-south position. This value represents where a local resident considers a 'place'. Latitude is a decimal number between -90.0 and 90.0.,1158860483,latitude,local
+The coordinate that specifies a 'local' east-west position. This value represents where a local resident considers a place. Longitude is a decimal number between -180.0 and 180.0.,1158860469,longitude,local
+,1158846279,adm0,meso
+,1158846295,adm1,meso
+,1158846281,adm1_alt,meso
+,1158846283,adm1_alt2,meso
+,1158846285,adm1_en,meso
+,1158846287,adm1_loc,meso
+,1158846289,adm1_loc2,meso
+,1158846293,adm1_name,meso
+,1158846297,adm2_alt,meso
+,1158846299,adm2_gaul,meso
+,1158846301,adm2_loc,meso
+,1158846303,adm2_name,meso
+,1158846321,admin1,meso
+,1158846317,admin1_en,meso
+,1158846319,admin1_loc,meso
+,1158846323,admin1name,meso
+,1158846329,admin1r,meso
+,1158846325,admin1r_en,meso
+,1158846331,admin2name,meso
+,1158846311,admin_1,meso
+,1158846305,admin_1_en,meso
+,1158846307,admin_1_lo,meso
+,1158846313,admin_1r,meso
+,1158846315,admin_2,meso
+,1158846333,aotm,meso
+,1158846335,c_desc,meso
+,1158846337,c_name,meso
+,1158846339,county_id,meso
+,1158846341,delete_fla,meso
+,1158846343,diss_me,meso
+,1158846347,dissme,meso
+,1158846349,gadm_adm1,meso
+,1158846351,gadm_adm2,meso
+,1158846353,gadm_adm3,meso
+,1158846355,gadm_admi1,meso
+,1158846357,gadm_admin,meso
+,1158846359,gadm_admn2,meso
+,1158846361,gadm_alt,meso
+,1158846365,gadm_cyril,meso
+,1158846369,gadm_hasc,meso
+,1158846371,gadm_hasc2,meso
+,1158846367,gadm_hasc_,meso
+,1158846375,gadm_loc,meso
+,1158846373,gadm_loc_a,meso
+,1158846379,gadm_name,meso
+,1158846377,gadm_name_,meso
+,1158846383,gaul_adm1,meso
+,1158846387,gaul_adm2,meso
+,1158846385,gaul_adm2_,meso
+,1158846389,gaul_adm3,meso
+,1158846391,gaul_admin,meso
+,1158846393,gaul_name,meso
+,1158846395,hasc_1,meso
+,1158846397,hasc_id,meso
+,1158846401,id,meso
+,1158846403,iscgm_adm2,meso
+,1158846405,iscgm_admi,meso
+,1158846407,loc_id_alt,meso
+,1158846411,local_id,meso
+,1158846409,local_id_a,meso
+,1158846413,mps_x,meso
+,1158846415,mps_y,meso
+,1158846419,nam_en_alt,meso
+,1158846421,name_alt,meso
+,1158846423,name_alt1,meso
+,1158846425,name_alt2,meso
+,1158846427,name_alt3,meso
+,1158846429,name_en,meso
+,1158846431,name_en2,meso
+,1158846433,name_lat,meso
+,1158846441,name_loc,meso
+,1158846443,name_loc2,meso
+,1158846445,name_loc3,meso
+,1158846437,name_loc_1,meso
+,1158846439,name_loc_a,meso
+,1158846447,name_local,meso
+,1158846449,ne_adm1_en,meso
+,1158846451,ne_adm1_lo,meso
+,1158846455,ne_code_ha,meso
+,1158846457,objectid,meso
+,1158846459,ocha_adm2,meso
+,1158846461,ocha_admin,meso
+,1158846463,okato_code,meso
+,1158846465,okato_name,meso
+,1158846467,oktmo_code,meso
+,1158846469,oktmo_name,meso
+,1158846473,osm_adm2,meso
+,1158846475,patch,meso
+,1158846479,pop,meso
+,1158846477,pop_year,meso
+,1158846481,region,meso
+,1158846483,source,meso
+,1158846485,type_alt,meso
+,1158846487,type_en,meso
+,1158846491,type_loc,meso
+,1158846493,type_local,meso
+A Mesoshapes-derived value of a Who's On First `wof:id` property value. This `wof:id` represents the identifier of a 'matched' Who's On First record that was found during importing of the Mesoshapes data.,1495037875,wof_id,meso
+,1159079511,gn_adm0_cc,misc
+,1159079521,gn_fcode,misc
+,1159079529,gn_id,misc
+,1159079497,gn_local,misc
+,1159079479,gn_nam_loc,misc
+,1159079487,gn_namadm1,misc
+,1159079475,gn_name,misc
+,1159079507,local_max,misc
+,1159079501,local_sum,misc
+,1159079485,localhoods,misc
+,1159079471,name,misc
+,1159079483,name_adm0,misc
+,1159079503,name_adm1,misc
+,1159079505,name_adm2,misc
+,1159079531,name_en,misc
+,1159079527,name_lau,misc
+,1159079519,name_local,misc
+,1159079495,photo_max,misc
+,1159079493,photo_sum,misc
+,1159079515,placetype,misc
+,1159079961,qs_a0,misc
+,1159079937,qs_a0_lc,misc
+,1159079959,qs_a1,misc
+,1159079945,qs_a1_alt,misc
+,1159079927,qs_a1_lc,misc
+,1159079941,qs_a1r,misc
+,1159079923,qs_a1r_alt,misc
+,1159079935,qs_a1r_lc,misc
+,1159079925,qs_adm0,misc
+,1159079939,qs_adm0_a3,misc
+,1159079963,qs_gn_id,misc
+,1159079929,qs_id,misc
+,1159079955,qs_iso_cc,misc
+,1159079951,qs_level,misc
+,1159079947,qs_pop,misc
+,1159079953,qs_scale,misc
+,1159079957,qs_source,misc
+,1159079933,qs_type,misc
+,1159079943,qs_woe_id,misc
+,1159079491,quad_count,misc
+,1159079509,woe_adm0,misc
+,1159079477,woe_adm1,misc
+,1159079489,woe_adm2,misc
+,1159079537,woe_funk,misc
+,1159079523,woe_lau,misc
+,1159079513,woe_local,misc
+,1159079473,woe_ver,misc
+,1159079239,woeid,misc
+The coordinate that specifies a label's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158844703,latitude,mps
+The coordinate that specifies a label's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158844705,longitude,mps
+,1159080449,berth,mz
+,1159079255,categories,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, the hierarchy_label property is used to determine what is included in that address string.",1158807925,hierarchy_label,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the country is included in that address string.",1159340195,hierarchy_label_country,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the county is included in that address string.",1159340191,hierarchy_label_county,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the localadmin is included in that address string.",1159340189,hierarchy_label_localadmin,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the locality is included in that address string.",1159340187,hierarchy_label_locality,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the macrocounty is included in that address string.",1159340185,hierarchy_label_macrocounty,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the macroregion is included in that address string.",1159340183,hierarchy_label_macroregion,mz
+"Used when generating place labels in geocoding software, like Pelias; this property defaults to True unless it is set to 0 manually. When Pelias decorates an address string, this property is used to determine whether the region is included in that address string.",1159340181,hierarchy_label_region,mz
+"A simplified encoding of a venue's hours of operation. This is not designed to capture every edge case or exception, just daily hours with open/close times. The value is encoded as a dictionary with three-letter day abbreviations (sun, mon, tue, wed, thu, fri, sat) as keys. Each day value is a dictionary with open and close keys, and values are composed of 24-hour format time like 09:30 or 16:45.",1158807923,hours,mz
+"This means that the geometry for this record is approximate in nature and probably derived from one of its ancestors. Technically the geometry may be incorrect but the rule of thumb is that it is still less-incorrect than no geometry or spanning the entire globe. An optional property, when not present should be interpreted as -1 (unknown).",1158807921,is_approximate,mz
+,1159080235,is_clustr,mz
+"This is a helper property to wrap up / hide the semantics of whether something is open or existing. For example, a venue that is no longer in operation or a country (like Yugoslavia) that has dissolved in to smaller nations. Any record with a date in the edtf:cessation or edtf:deprecated fields _should_ have a mz:is_current field value of 0",1158807919,is_current,mz
+Used when Mapzen suspects the record is bad or inappropriate but additional confirmation is needed before the feature is deprecated. Records with a 1 value are recommended to be hidden from map display and search unless explicitly asked for by name.,1158807917,is_funky,mz
+"Things like historic districts or similar with fixed, undisputed boundaries.",1158807913,is_hard_boundary,mz
+This is used to signify an area of interest. Labelling is supressed if a value of 1 is given.,1158807911,is_landuse_aoi,mz
+Is this considered official by someone or something you pay taxes to?,1158807909,is_official,mz
+,1159080403,is_retail,mz
+"Float values (though in practice mosts are integer values) that match to web map zoom schema. Common range is 0.0 to 18.0, though they can be greater.",1158807907,max_zoom,mz
+"Float values (though in practice mosts are integer values) that match to web map zoom schema. Common range is 0.0 to 18.0, though they can be greater.",1158807905,min_zoom,mz
+A string value used for notes when hand-curating a given record.,1158844709,note,mz
+,1159080355,phone,mz
+The name of the markdown file(s) containing human-readable notes for a given record. The file is stored in the same folder and contains edit notes about that record.,1158859079,remarks,mz
+"WARNING: This property is deprecated. Some estimation of coverage (including descendants) and completeness, based on total number of geotagged photos.",1158807903,tier_locality,mz
+,1159079525,tier_metro,mz
+"The colloquial, informal name for a place.",1158804553,{lang}_x_colloquial,name
+The historical name for a place.,1158804555,{lang}_x_historical,name
+The preferred name for a place. Used in Pelias and to generate language-specific map labels.,1158804557,{lang}_x_preferred,name
+An unclassified name used for a place.,1158804559,{lang}_x_unknown,name
+An uncommon variant name used for a place. Used in mapping and geocoding software and to generate language-specific map labels.,1158804561,{lang}_x_variant,name
+The coordinate that specifies a navigation point's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158860487,latitude,nav
+The coordinate that specifies a navigation point's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158860479,longitude,nav
+,1159079399,ADM0CAP,ne
+,1159079437,ADM0NAME,ne
+,1159079377,ADM1NAME,ne
+,1159079341,ADMIN1_COD,ne
+,1159079375,CAPALT,ne
+,1159079347,CAPIN,ne
+,1159079345,CHANGED,ne
+,1159079415,CHECKME,ne
+,1159079317,CITYALT,ne
+,1159079271,COMPARE,ne
+,1159079279,DIFFASCII,ne
+,1159079291,DIFFNOTE,ne
+,1159079303,ELEVATION,ne
+,1159079449,FEATURE_CL,ne
+,1159079353,FEATURE_CO,ne
+,1159079275,GEONAMEID,ne
+,1159079273,GEONAMESNO,ne
+,1159079467,GN_ASCII,ne
+,1159079281,GN_POP,ne
+,1159079379,GTOPO30,ne
+,1159079451,LATITUDE,ne
+,1159079365,LONGITUDE,ne
+,1159079439,LS_MATCH,ne
+,1159079441,LS_NAME,ne
+,1159079351,MAX_AREAKM,ne
+,1159079321,MAX_AREAMI,ne
+,1159079329,MAX_BBXMAX,ne
+,1159079465,MAX_BBXMIN,ne
+,1159079269,MAX_BBYMAX,ne
+,1159079339,MAX_BBYMIN,ne
+,1159079359,MAX_NATSCA,ne
+,1159079313,MAX_PERKM,ne
+,1159079297,MAX_PERMI,ne
+,1159079385,MAX_POP10,ne
+,1159079393,MAX_POP20,ne
+,1159079429,MAX_POP300,ne
+,1159079323,MAX_POP310,ne
+,1159079289,MAX_POP50,ne
+,1159079401,MEAN_BBXC,ne
+,1159079453,MEAN_BBYC,ne
+,1159079263,MEGACITY,ne
+,1159079405,MEGANAME,ne
+,1159079413,MIN_AREAKM,ne
+,1159079305,MIN_AREAMI,ne
+,1159079457,MIN_BBXMAX,ne
+,1159079387,MIN_BBXMIN,ne
+,1159079423,MIN_BBYMAX,ne
+,1159079331,MIN_BBYMIN,ne
+,1159079367,MIN_PERKM,ne
+,1159079417,MIN_PERMI,ne
+,1159079333,NAME,ne
+,1159079309,NAMEALT,ne
+,1159079455,NAMEASCII,ne
+,1159079307,NAMEDIFF,ne
+,1159079419,NAMEPAR,ne
+,1159079295,NATSCALE,ne
+,1159079389,NOTE,ne
+,1159079371,POP1950,ne
+,1159079469,POP1955,ne
+,1159079425,POP1960,ne
+,1159079459,POP1965,ne
+,1159079335,POP1970,ne
+,1159079395,POP1975,ne
+,1159079407,POP1980,ne
+,1159079381,POP1985,ne
+,1159079431,POP1990,ne
+,1159079343,POP1995,ne
+,1159079369,POP2000,ne
+,1159079403,POP2005,ne
+,1159079433,POP2010,ne
+,1159079325,POP2015,ne
+,1159079411,POP2020,ne
+,1159079277,POP2025,ne
+,1159079293,POP2050,ne
+,1159079383,POP_MAX,ne
+,1159079461,POP_MIN,ne
+,1159079447,POP_OTHER,ne
+,1159079285,RANK_MAX,ne
+,1159079267,RANK_MIN,ne
+,1159079361,SOV0NAME,ne
+,1159079363,TIMEZONE,ne
+,1159079311,UN_ADM0,ne
+,1159079349,UN_FID,ne
+,1159079443,UN_LAT,ne
+,1159079435,UN_LONG,ne
+,1159079315,WORLDCITY,ne
+,1158847093,abbrev,ne
+,1158847095,abbrev_len,ne
+,1779776605,adm0_a3,ne
+,1779776553,adm0_a3_ar,ne
+,1779776529,adm0_a3_bd,ne
+,1779776641,adm0_a3_br,ne
+,1779776575,adm0_a3_cn,ne
+,1779776547,adm0_a3_de,ne
+,1779776549,adm0_a3_eg,ne
+,1779776623,adm0_a3_es,ne
+,1779776579,adm0_a3_fr,ne
+,1779776589,adm0_a3_gb,ne
+,1779776561,adm0_a3_gr,ne
+,1779776633,adm0_a3_id,ne
+,1779776587,adm0_a3_il,ne
+,1779776591,adm0_a3_in,ne
+,1158847103,adm0_a3_is,ne
+,1779776645,adm0_a3_it,ne
+,1779776635,adm0_a3_jp,ne
+,1779776647,adm0_a3_ko,ne
+,1779776609,adm0_a3_ma,ne
+,1779776651,adm0_a3_nl,ne
+,1779776531,adm0_a3_np,ne
+,1779776581,adm0_a3_pk,ne
+,1779776601,adm0_a3_pl,ne
+,1779776661,adm0_a3_ps,ne
+,1779776517,adm0_a3_pt,ne
+,1779776567,adm0_a3_ru,ne
+,1779776625,adm0_a3_sa,ne
+,1779776533,adm0_a3_se,ne
+,1779776519,adm0_a3_tr,ne
+,1779776663,adm0_a3_tw,ne
+,1779776615,adm0_a3_ua,ne
+,1158847105,adm0_a3_un,ne
+,1158847107,adm0_a3_us,ne
+,1779776563,adm0_a3_vn,ne
+,1158847109,adm0_a3_wb,ne
+,1158847111,adm0_dif,ne
+,1158847113,adm0_label,ne
+,1158847115,adm0_sr,ne
+,1158847123,adm1_cod_1,ne
+,1158847125,adm1_code,ne
+,1158847129,admin,ne
+,1158847133,area_sqkm,ne
+,1158847135,brk_a3,ne
+,1158847139,brk_diff,ne
+,1158847141,brk_group,ne
+,1158847143,brk_name,ne
+,1158847153,check_me,ne
+,1158847161,code_hasc,ne
+,1158847163,code_local,ne
+,1158847167,continent,ne
+,1158847169,datarank,ne
+,1158847177,diss_me,ne
+,1158847179,economy,ne
+,1779776659,featurecla,ne
+,1158847193,fips,ne
+,1158847195,fips_10,ne
+,1158847197,fips_10_,ne
+,1158847199,fips_alt,ne
+,1158847201,formal_en,ne
+,1158847203,formal_fr,ne
+,1158847205,gadm_level,ne
+,1779776607,gdp_md,ne
+,1158847207,gdp_md_est,ne
+,1158847211,gdp_year,ne
+,1158847217,geonunit,ne
+,1158847219,geou_dif,ne
+,1158847221,geounit,ne
+,1158847223,gn_a1_code,ne
+,1158847229,gn_id,ne
+,1158847231,gn_level,ne
+,1158847233,gn_name,ne
+,1158847237,gn_region,ne
+,1158847239,gns_adm1,ne
+,1158847241,gns_id,ne
+,1158847243,gns_lang,ne
+,1158847247,gns_level,ne
+,1158847249,gns_name,ne
+,1158847251,gns_region,ne
+,1158847255,gu_a3,ne
+,1158847257,hasc_maybe,ne
+,1158847259,homepart,ne
+,1158847261,income_grp,ne
+,1158847265,iso_3166_2,ne
+,1779776583,iso_a2,ne
+,1779776617,iso_a2_eh,ne
+,1158847271,iso_a3,ne
+,1779776619,iso_a3_eh,ne
+,1158847273,iso_n3,ne
+,1779776545,iso_n3_eh,ne
+,1779776525,labelrank,ne
+,1158847279,lastcensus,ne
+,1158847287,level,ne
+,1158847289,long_len,ne
+,1158847301,map_color,ne
+,1158847303,mapcolor13,ne
+,1158847305,mapcolor7,ne
+,1158847307,mapcolor8,ne
+,1158847309,mapcolor9,ne
+,1779776571,max_label,ne
+,1779776535,min_label,ne
+,1158847369,min_zoom,ne
+,1158847377,name_alt,ne
+,1779776629,name_ar,ne
+,1779776665,name_bn,ne
+,1779776643,name_ciawf,ne
+,1779776657,name_de,ne
+,1779776653,name_el,ne
+,1779776637,name_en,ne
+,1779776669,name_es,ne
+,1158847379,name_forma,ne
+,1158847381,name_fr,ne
+,1779776551,name_he,ne
+,1779776621,name_hi,ne
+,1779776603,name_hu,ne
+,1779776597,name_id,ne
+,1779776611,name_it,ne
+,1779776627,name_ja,ne
+,1779776537,name_ko,ne
+,1158847383,name_len,ne
+,1158847385,name_local,ne
+,1158847387,name_long,ne
+,1779776593,name_nl,ne
+,1779776565,name_pl,ne
+,1779776573,name_pt,ne
+,1779776599,name_ru,ne
+,1158847391,name_sort,ne
+,1779776521,name_sv,ne
+,1779776569,name_tr,ne
+,1779776539,name_uk,ne
+,1779776527,name_ur,ne
+,1779776585,name_vi,ne
+,1779776639,name_zh,ne
+,1158847405,ne_10m_adm,ne
+,1158847413,note_adm0,ne
+,1158847415,note_brk,ne
+,1158847417,oid_,ne
+,1158847419,pop_est,ne
+,1779776555,pop_rank,ne
+,1158847429,pop_year,ne
+,1158847469,postal,ne
+,1158847471,provnum_ne,ne
+,1158847477,region,ne
+,1158847481,region_cod,ne
+,1158847483,region_sub,ne
+,1158847485,region_un,ne
+,1158847487,region_wb,ne
+,1158847489,sameascity,ne
+,1779776655,scalerank,ne
+,1779776557,sov_a3,ne
+,1158847503,sovereignt,ne
+,1158847505,su_a3,ne
+,1158847507,su_dif,ne
+,1158847509,sub_code,ne
+,1158847511,subregion,ne
+,1158847513,subunit,ne
+,1158847517,terr_,ne
+,1158847521,tiny,ne
+,1158847523,type,ne
+,1158847525,type_en,ne
+,1158847527,un_a3,ne
+,1158847539,wb_a2,ne
+,1158847541,wb_a3,ne
+,1779776543,wikidataid,ne
+,1158847543,wikipedia,ne
+,1158847545,woe_id,ne
+,1158847547,woe_id_eh,ne
+,1158847549,woe_label,ne
+,1158847553,woe_name,ne
+,1158847595,woe_note,ne
+,1159079785,gnocdc_lab,nolagis
+,1159079783,lup_lab,nolagis
+,1159079789,neigh_id,nolagis
+Represents an airport's elevation (in feet).,1158844711,elevation_ft,oa
+"Represents the airport type, used in the OA database.",1158844713,type,oa
+,1159079753,name,oakced
+,1159080301,admin_county_code,os
+,1159080297,admin_distict_code,os
+,1159080293,admin_ward_code,os
+The code used by ONS to identify the country in which the Code-Point georeference lies.,1159080299,country_code,os
+The code used by ONS to identify the region in which the Code-Point georeference lies.,1712952397,county_code,os
+"Unitary Authority, Metropolitan and Non- Metropolitan District, London Borough or Scottish Council Area in which CPLC falls.",1712952399,district_code,os
+,1159080289,nhs_ha_code,os
+,1159080295,nhs_regional_ha_code,os
+A value indicating the positional accuracy of the Code-Point coordinates.,1159080303,positional_quality_indicator,os
+The code used by ONS to identify the region in which the Code-Point georeference lies.,1712952401,region_code,os
+,1159079889,AJ_KAUPU00,oulugov
+,1159079881,AJ_KAUPUNG,oulugov
+,1159079875,ID,oulugov
+,1159079885,TEKSTI,oulugov
+,1159080487,cartodb_id,out
+,1159080473,image,out
+,1159080469,mafia_owned,out
+,1159080475,membership,out
+,1159080463,notes,out
+,1159080477,pub_desc,out
+,1159080467,source,out
+,1159080465,the_geom,out
+,1159079705,@id,pedia
+,1159079691,borough,pedia
+,1159079651,boroughCode,pedia
+,1159079657,neighborhood,pedia
+,1159079721,COALIT,porbps
+,1159079777,COMMPLAN,porbps
+,1159079673,HORZ_VERT,porbps
+,1159079639,ID,porbps
+,1159079713,MAPLABEL,porbps
+,1159079723,NAME,porbps
+,1159079763,OBJECTID,porbps
+,1159079965,SHARED,porbps
+,1158847599,a0,qs
+,1158847601,a0_alt,qs
+,1158847603,a0_lc,qs
+,1158847607,a1,qs
+,1158847609,a1_alt,qs
+,1158847611,a1_lc,qs
+,1158847613,a1r,qs
+,1158847615,a1r_alt,qs
+,1158847617,a1r_lc,qs
+,1158847619,a2,qs
+,1158847621,a2_alt,qs
+,1158847625,a2_lc,qs
+,1158847627,a2r,qs
+,1158847629,a2r_alt,qs
+,1158847631,a2r_lc,qs
+,1158847633,adm0,qs
+,1158847635,adm0_a3,qs
+,1158847637,gn_country,qs
+,1158847639,gn_fcode,qs
+,1158847643,gn_id,qs
+,1158847645,gn_pop,qs
+,1158847647,id,qs
+,1158847649,la,qs
+,1158847651,la_alt,qs
+,1158847653,la_lc,qs
+,1158847655,level,qs
+,1158847657,loc,qs
+,1158847661,loc_alt,qs
+,1158847663,loc_lc,qs
+,1158847665,name,qs
+,1158847667,name_adm0,qs
+,1158847669,name_adm1,qs
+,1158847671,photos,qs
+,1158847673,photos_1k,qs
+,1158847675,photos_9k,qs
+,1158847679,photos_9r,qs
+,1158847681,photos_all,qs
+,1158847683,photos_sr,qs
+,1158847685,placetype,qs
+,1158847687,pop,qs
+,1158847689,pop_sr,qs
+,1158847691,qs_id,qs
+,1158847693,scale,qs
+,1158847697,source,qs
+,1158847699,type,qs
+,1158847701,woe_adm0,qs
+,1158847703,woe_id,qs
+,1159080153,aaroncc,qs_pg
+,1159080179,gn_country,qs_pg
+,1159080149,gn_fcode,qs_pg
+,1159080139,gn_id,qs_pg
+,1159080137,gn_pop,qs_pg
+,1159080173,name,qs_pg
+,1159080151,name_adm0,qs_pg
+,1159080135,name_adm1,qs_pg
+,1159080155,photos,qs_pg
+,1159080171,photos_1k,qs_pg
+,1159080181,photos_9k,qs_pg
+,1159080125,photos_9r,qs_pg
+,1159080175,photos_all,qs_pg
+,1159080157,photos_sr,qs_pg
+,1159080127,pop_sr,qs_pg
+,1159080167,qs_id,qs_pg
+,1159080185,qs_pg_placetype,qs_pg
+,1159080163,qs_pg_placetype_gp,qs_pg
+,1159080159,woe_adm0,qs_pg
+,1159080169,woe_id,qs_pg
+,1158807997,alcohol,resto
+,1158807995,credit_cards,resto
+,1158807993,vegan_friendly,resto
+,1158807991,vegetarian_friendly,resto
+"This optional string property indicates which of the feature's named geometries to use for point-in-polygon reverse geocoding tasks. The property value names a polygon source prefix, which is typically stored in an alt-geometry file. The reversegeo:geometry value is represented as {source} in the following filename expansion: 85922583-alt-{source}-extras.geojson",1158804537,geometry,reversegeo
+"Typically derived from mapshaper, reversegeo:latitude represents the latitude value to use when reverse geocoding a record.",1158804533,latitude,reversegeo
+"Typically derived from mapshaper, reversegeo:longitude represents the longitude value to use when reverse geocoding a record.",1158804535,longitude,reversegeo
+,1159079905,polygon,reversegeo
+,1159080209,NEIGHBORHOOD,santabar
+,1159080207,NHOOD,santabar
+,1159079767,NAME,sdgis
+,1159079641,hoods_,seagv
+,1159079649,hoods_id,seagv
+,1159079699,l_hood,seagv
+,1159079761,l_hoodid,seagv
+,1159079717,objectid,seagv
+,1159079685,s_hood,seagv
+,1159079683,symbol,seagv
+,1159079707,symbol2,seagv
+,1159080413,accession_id,sfac
+,1159080409,artist,sfac
+,1159080427,created_at,sfac
+,1159080419,credit_line,sfac
+,1159080411,display_dimensions,sfac
+,1159080421,id,sfac
+,1159080405,location,sfac
+,1159080407,location_description,sfac
+,1159080425,medium,sfac
+,1159080423,revision,sfac
+,1159080429,source,sfac
+,1159080415,title,sfac
+,1159080443,dept,sfgov
+,1159080431,deptname,sfgov
+,1159080433,facility_i,sfgov
+,1159079757,link,sfgov
+,1159080441,school_typ,sfgov
+,1158847597,address,sg
+,1159080371,categories,sg
+,1158847729,city,sg
+,1158847733,classifiers,sg
+,1159080365,href,sg
+,1159080401,menulink,sg
+,1159080353,orig_category,sg
+,1158847737,owner,sg
+,1158847739,phone,sg
+,1158847741,postcode,sg
+,1158847743,province,sg
+,1158847745,tags,sg
+,1158847747,website,sg
+"The data source of a record's alternate geometry, in the alternate geometry file's property list. The record's default file property list should use `src:geom_alt` to list this specific alternate geometry source and any other alternates geometry sources. Valid property values are listed in the whosonfirst-sources repository.",1913841421,alt_label,src
+,1159079911,centroid_lbl,src
+The data source of a record's geometry. Valid property values are listed in the whosonfirst-sources repository.,1158804525,geom,src
+"The data sources of a record's optional alternate geometries, which can be used to construct file names to those geometries, like: `{id}-alt-{source}-{extras}.geojson` where {source} is required and {extras} is optional. See also `src:alt_label`. Valid property values are listed in the whosonfirst-sources repository.",1158804527,geom_alt,src
+A list of one or more Who's On First IDs from which the record's geometry was derived.,1763247451,geom_derived_from,src
+"A value representing the original geometry's source. Typically used when a source geometry is clipped, simplified, or slightly modified.",1360698733,geom_via,src
+The source of a record's lbl properties. Valid property values are generally derived from Mapshaper and is also listed in the whosonfirst-sources repository. Other iterations of the lbl property can include lbl:centroid and centroid_lbl; these properties are specific to the label centroid of a given feature.,1158804529,lbl,src
+,1159079565,lbl_centroid,src
+"The source of a record's population value, which is stored in the wof:population property. Property values are a source name.",1158844929,population,src
+"The date representing when a record's population value was catalogued. Property value is typically formatted in an EDTF format, like `YYYY-MM-DD` or `YYYY`.",1495044599,population_date,src
+,1159079855,gml_id,ssuberlin
+,1159079861,spatial_alias,ssuberlin
+,1159079857,spatial_name,ssuberlin
+"Area of the subdivision in sq. km. Rounded to the nearest unit, or the nearest tenth of a unit where available.",1158818035,area_km,statoids
+"Area of the subdivision in sq. mi. Rounded to the nearest unit, or the nearest tenth of a unit where available.",1158818037,area_mi,statoids
+,1159079981,areakm,statoids
+"Date of which the population was enumerated. If the source doesn't give a month or day, 01 is used.",1158818017,as-of-date,statoids
+Administrative seat of the subdivision.,1158818041,capital,statoids
+"Country code, represented using the ISO 3166-1 code.",1158818021,country,statoids
+,1159079983,date,statoids
+"The digits of a telephone number following the country code often have a geographical significance.  Country code from ITU-T recommendation E.164 (international dialing code), sometimes followed by area code.",1158818043,dial,statoids
+Distinguishing signs of vehicles in international traffic (oval bumper sticker codes).,1158818045,ds,statoids
+Codes assigned by the Federation Internationale de Football Association.,1158818053,fifa,statoids
+,1159079917,fips,statoids
+"GAUL is a relatively new initiative from the FAO (Food and Agriculture Organization), a specialized agency of the U.N. It aims to codify all the world's statoids and their changes, from about 1990 on. Global Administrative Unit Layers from the Food and Agriculture Organization.",1158818055,gaul,statoids
+,1159079249,gec,statoids
+Represented using the level-2 HASC code.,1158818023,hasc,statoids
+"Signifies if the feature is an independent political entity. Country status, based on the CIA World Factbook. This column is just a superficial note, provided for convenience.",1158818063,independent,statoids
+,1159079915,inegi,statoids
+Country codes used by the International Olympics Committee. These codes identify the nationality of athletes and teams during Olympic events.,1158818059,ioc,statoids
+,1159079253,iso,statoids
+Alpha-2 codes from ISO 3166-1.,1158818047,iso_a2,statoids
+Alpha-3 codes from ISO 3166-1 (synonymous with World Bank Codes).,1158818051,iso_a3,statoids
+Numeric codes from ISO 3166-1.,1158818057,iso_num,statoids
+ITU country codes are used to identify radio transmitter locations. Codes assigned by the International Telecommunications Union.,1158818061,itu,statoids
+MAchine-Readable Cataloging codes from the Library of Congress. MARC is a standard for encoding bibliographic materials in electronic form. The Library of Congress maintains the MARC code list for countries.,1158818065,marc,statoids
+"In English, using characters in the Latin-1 character set. Other characters, such as a-macron, are displayed with diacritics removed.",1158818019,name,statoids
+"Most recent census figures available. Where no census is available, most recent estimates available. When subdivisions split, often shows a cross-reference to the other fragment.",1158818029,population,statoids
+A value derived from Statoids that signifies the date at which the population value was gathered. The value follows the YYYY-MM-DD format.,1495037873,population_date,statoids
+"Level-3 hierarchical administrative subdivision code, defined by Statoids, used as a primary key for this table.",1158818025,statoid,statoids
+"Represented as offset from UTC (formerly known as GMT), +-hh:mm, minutes omitted if :00. Positive offsets generally represent the Eastern hemisphere. Tilde (~) identifies time zones where Daylight Saving Time (Summer Time) is observed. For regions in more than one time zone, Statoids has selected the time zone covering the largest area.",1158818039,timezone,statoids
+"Status of division (municipality, district, county, etc.). Translated into English, unless there is no recognized equivalent in English.",1158818027,type,statoids
+,1159079257,tz,statoids
+Country abbreviations used in weather reports from the World Meteorological Organization.,1158818069,wmo,statoids
+,1159079825,district,stpaulgov
+,1159079827,name1,stpaulgov
+,1159079821,name2,stpaulgov
+,1159080069,ID,tkugov
+,1159080067,NIMI,tkugov
+,1159080065,PIENALUE,tkugov
+,1159080061,MI_PRINX,tmpgov
+,1159080059,id,tmpgov
+,1159080063,name,tmpgov
+,1159079563,AREA_NAME,torsdfa
+,1159079551,AREA_S_CD,torsdfa
+The coordinate that specifies a 'tourist' north–south position. This value represents where a tours considers a 'place' to be. Latitude is a decimal number between -90.0 and 90.0.,1158860489,latitude,tourist
+The coordinate that specifies a 'tourist' east-west position. This value represents where a tourist considers a 'place' to be. Longitude is a decimal number between -180.0 and 180.0.,1158860481,longitude,tourist
+"A concatenated identifier from the UN/LOCODE, a two-character country code and three-character feature code with a deliminator and names.",1158844931,subdivision,unlc
+,1159079123,aland,uscensus
+,1159079095,awater,uscensus
+,1159079093,cd115fp,uscensus
+,1159079111,cdsessn,uscensus
+,1159079101,funcstat,uscensus
+,1159079105,geoid,uscensus
+,1159079097,intptlat,uscensus
+,1159079107,intptlon,uscensus
+,1159079099,lsad,uscensus
+,1159079127,lsy,uscensus
+,1159079115,mtfcc,uscensus
+,1159079113,namelsad,uscensus
+Population value from decenial census or an annual estimate,1930466623,population,uscensus
+Date in EDTF format for the population value.,1930466625,population_date,uscensus
+DEPRECATED! Use population_date instead.,1930466627,population_year,uscensus
+,1159079129,sldlst,uscensus
+,1159079131,sldust,uscensus
+,1159079091,statefp,uscensus
+,1159079803,MAPID,vanpds
+,1159079809,NAME,vanpds
+,1159079693,quadrant,wapo
+,1159079671,subhood,wapo
+"The area of a given record, as recorded by Wikidata. Represented as kilometers squared (km2).",1159343999,area,wd
+Represents a record's recorded elevation. Represented in meters (m).,1159343997,elevation,wd
+The coordinate that specifies a label's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1159343995,latitude,wd
+The coordinate that specifies a label's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1159343993,longitude,wd
+The recorded population of a given record.,1159343989,population,wd
+The wordcount of the linked Wikipedia page (usually English) for this record. The Wikipedia page can be found in the `wof:concordances` property.,1159343987,wordcount,wd
+"The area of a given record, as recorded by Wikipedia. Represented as kilometers squared (km2).",1158846097,area,wk
+Represents a record's recorded elevation. Represented in meters (m).,1158846099,elevation,wk
+The coordinate that specifies a label's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158846101,lat,wk
+The coordinate that specifies a label's north–south position. Latitude is a decimal number between -90.0 and 90.0.,1158846103,latitude,wk
+The coordinate that specifies a label's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158846105,long,wk
+The coordinate that specifies a label's east-west position. Longitude is a decimal number between -180.0 and 180.0.,1158846107,longitude,wk
+The recorded population of a given record.,1158846109,population,wk
+The wordcount of the linked Wikipedia page for this record. The Wikipedia page can be found in the wof:concordances property.,1158846113,wordcount,wk
+,1159080131,adm0_id,woe
+"A dictionary of woe identifiers that represents a record's administrative hierarchy, as categorized in Where On Earth.",1158846095,hierarchy,woe
+,1159080161,name_adm0,woe
+,1159080141,name_adm1,woe
+,1159080145,placetype,woe
+WARNING: this property is deprecated and has been replaced by wof:shortcode. A two-letter country code from ISO 3166.,1158807929,abbreviation,wof
+"A string value (eg: `us-house` or `state-house`) that indicates the legislative body a constituency is grouped with, to explicately state and to disambiguate when a 'level' of `wof:constituency` has multiple chambers. See also `wof:constituency`.",1159079117,association,wof
+,1159079243,belongs,wof
+,1159079133,belongs_to,wof
+"The (unique) set of all ancestors, as an array (list) of WOF IDs.",1158807931,belongsto,wof
+"A unique identifier that represents a Mapzen brand, as found in https://github.com/whosonfirst-data/whosonfirst-brands.",1158859033,brand_id,wof
+"Records of the same placetype that intersect the current record, as an array (list) of WOF IDs.",1158807935,breaches,wof
+"A list property used to link country or dependency records to their administrative, judicial, and/or legislative capitals. The values are equal to the wof:id of each capital. Capital records have a wof:placetype of locality.",1158844349,capital,wof
+"A string property used to link administrative, judicial, and/or legislative capitals to their parent country or dependency. The values are equal to the wof:id of the parent country or dependency.",1158844345,capital_of,wof
+,1159080391,categories,wof
+,1159079921,category,wof
+,1159079919,children,wof
+"A hash containing identifiers from other data sources. The concordance key is composed of a WOF source prefix, : delimiter, and source's identifier name, for example 'uscensus:geoid'. The concordance value is set to the source's unique identifier value for the place.",1158807939,concordances,wof
+"A dictionary of lists, used if a record has more than one identifier for a single data source. Contains identifiers not present in the wof:concordances property.",1158807941,concordances_alt,wof
+"One concordance key (not value). These represent the concordance key for officially recognized identifiers for the sources of the corresponding WOF record, and is used to lookup the value from the wof:concordances property list. A national statistical agency ID is preferred to facilitate demographic data joins. The concordance key is composed of a WOF source prefix, : delimiter, and source's identifier name, for example 'uscensus:geoid'.",1880439613,concordances_official,wof
+"A list of one or more concordance keys (not values), used if a record has more than one official identifier from a single data source or multiple data sources. These represent alternate concordance key(s) for officially recognized identifiers for the sources of the corresponding WOF record, and is used to lookup the value from the wof:concordances property list. Contains identifiers not present in the `wof:concordances_official` property. The concordance key is composed of a WOF source prefix, : delimiter, and source's identifier name, for example 'uscensus:geoid'.",1880452329,concordances_official_alt,wof
+,1159080389,concordances_sources,wof
+A `wof:placetype` string value that indicates the relevant administrative hiearchy the consituancey is loosely linked to (eg: `country` for national-level legislative districts or `region` for state-level legislative districts). See also `wof:association`.,1159079119,constituency,wof
+A list of Who's On First properties that should be assumed to have been edited by an actual human and should not be updated by automated processes.,1158807943,controlled,wof
+"Links two or more records with overlapping or identical geometries that serve separate functions, but are essentially the same place. Think city-state.",1158807945,coterminous,wof
+A two-letter country code from ISO 3166.,1158807947,country,wof
+The three-letter country code from ISO 3166-1 for a given country or dependency record.,1158846079,country_alpha3,wof
+"An auto-generated, non-editable Unix epoch timestamp integer.",1158807949,created,wof
+A property used for timezone records. The value is a more robust version of the wof:name and includes the country or continent name that the timezone geometry falls within.,1158846081,fullname,wof
+"A list of each of the record's alt-geometry files' filenames, minus the '{ID}-alt' prefix and '.geojson' suffix. Each alt-geometry file's '{SOURCE}-{FUNCTION}-{EXTRAS}' will be listed.",1712374175,geom_alt,wof
+"An auto-generated, non-editable MD5 string of the geometry JSON.",1158807953,geomhash,wof
+"A list of hashes, where each object is the list of ancestors.",1158807955,hierarchy,wof
+"The record's unique numeric integer identifier, typically derived from Brooklyn Integers.",1158807957,id,wof
+,1159080461,is_current,wof
+A string value used to populated labels for map displays.,1158846083,label,wof
+"IMPORTANT: THIS PROPERTY HAS BEEN DEPRECATED. It will not be removed in the short-term but nor will it be updated to added to any new or existing records. An ISO-639-3 language identifier. These represent the common, or preferred, languages spoken in the location of the corresponding WOF record.",1158807959,lang,wof
+One or more ISO-639-3 language identifiers. These represent the officially recognized languages of the location of the corresponding WOF record.,1158807961,lang_x_official,wof
+"One or more ISO-639-3 language identifiers. These represent the languages, inclusive of official languages, spoken in the location of the corresponding WOF record.",1158807963,lang_x_spoken,wof
+A Unix epoch timestamp integer.,1158807965,lastmodified,wof
+This is used to signify the world's most populated cities. A record represents a megacity if a value of 1 is given.,1158846085,megacity,wof
+An English UTF-7 transliterated representation of the name. (Some features have UTF-8 names.),1158807967,name,wof
+"An integer WOF ID of the direct parent record. If a record has more than one parent, the following values should be used: -1 (unknown parent, record needs review), -2 (shrug, this feature is complicated), -3 (contested, but not disputed.. used for placetypes below the locality level), or -4 (multiple legal parents.. used for placetypes at the locality level or above).",1158807971,parent_id,wof
+,1159080491,phone,wof
+"Represents a common, common-optional, or optional string value of what WOF calls a record's administrative division type.",1158807975,placetype,wof
+A single placetype denoting alternate representations of a place (exclusive of the placetype value).,1158807977,placetype_alt,wof
+,1159080375,placetype_id,wof
+WARNING: This property is deprecated. See: label:{lang}_x_preferred_placetype instead. What locals consider the placetype to be (string value).,1158807979,placetype_local,wof
+,1159080383,placetype_names,wof
+"An integer value to represent the most current, known population of a place. (related: src:population)",1158846087,population,wof
+"An aggregated integer, 0 to 18, to represent the population value for a given record. This property also allows Who's On First to give an approximate range when an exact population value can't be set.",1158807973,population_rank,wof
+A string label containing the full name of the parent repository housing the record.,1159079109,repo,wof
+"A weighted value to represent the size of a given record. The smaller the value, the larger the record's scale.",1158846089,scale,wof
+"A two or three character alphabetic code, preferring three characters for country, two characters for region, and either two or three characters for county.",1158808051,shortcode,wof
+"An optional boolean value that, when true, represents an area of unincorporated status without self-governance.",1158807981,statistical_gore,wof
+"The value represents a concatenated identifier from the UN/LOCODE, a two-character country code and three-character feature code with a deliminator and names.",1158846091,subdivision,wof
+,1159080455,superseded,wof
+An array (a list) of WOF IDs that have superseded the WOF record.,1158807983,superseded_by,wof
+An array (a list) of WOF IDs that the record supersedes.,1158807985,supersedes,wof
+An array (a list) of tags.,1158807989,tags,wof
+,1159080493,website,wof
+,1159079677,Name,zolk
+,1159079737,description,zolk
+Also represented as zs:*:area_m.,1158847771,area_m,zs
+Also represented as zs:*:blockids.,1158847769,blockids,zs
+Also represented as zs:us:counties.,1158847765,counties,zs
+Also represented as zs:*:housing10.,1158847763,housing10,zs
+Also represented as zs:*:id.,1158847761,id,zs
+Also represented as zs:*:label.,1158847759,label,zs
+Also represented as zs:*:name.,1158847757,name,zs
+Also represented as zs:*:placetype.,1158847755,placetype,zs
+Also represented as zs:*:pop10.,1158847753,pop10,zs
